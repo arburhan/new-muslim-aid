@@ -35,7 +35,7 @@ export default function Footer() {
   const supportLinks = [
     { name: t('projects'), href: `/${locale}/under-development` },
     { name: t('volunteer'), href: 'https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2' },
-    { name: t('about'), href: `/${locale}/under-development` },
+    { name: t('about'), href: `/${locale}/about` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
@@ -81,7 +81,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">{locale === 'bn' ? 'ইমেইল' : 'Email'}</p>
-                  <p className="text-gray-300">aidnewmuslim@gmail.com</p>
+                  <p className="text-gray-300">info@newmuslimaid.com</p>
                 </div>
               </div>
 

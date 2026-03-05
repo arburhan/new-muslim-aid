@@ -244,25 +244,24 @@ export default function GuidelinesPage() {
                                 : "Learn from these respected scholars"}
                         </p>
                     </div>
-
-                    <div className="flex flex-wrap justify-center  gap-8">
+                    {/* scholar section */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
                         {scholars.map((scholar, index) => (
                             <a
                                 key={index}
                                 href={scholar.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group text-center transform hover:-translate-y-2 transition-all duration-300"
+                                className="group flex flex-col items-center text-center transform hover:-translate-y-2 transition-all duration-300"
                             >
-                                <div className="relative mb-4 flex items-center justify-center w-48">
-                                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-green-400 to-blue-500 p-1 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                                <div className="relative mb-3 md:mb-4">
+                                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-green-400 to-blue-500 p-1 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
                                         <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                                            {/* Placeholder - replace with actual image */}
-                                            <Image src={scholar.image} alt={scholar.name} />
+                                            <Image src={scholar.image} alt={scholar.name} className="object-cover" />
                                         </div>
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300">
+                                <h3 className="text-sm md:text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300 leading-tight">
                                     {scholar.name}
                                 </h3>
                             </a>

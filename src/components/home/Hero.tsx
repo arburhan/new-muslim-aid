@@ -45,26 +45,39 @@ export default function Hero() {
                 <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
                   <StarIcon className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-sm font-bold text-green-700">
-                  {locale === 'bn' ? 'উলামায়ে কেরামের পরামর্শে ও তত্ত্বাবধানে পরিচালিত' : 'Guided and supervised by esteemed Islamic scholars'}
-                </span>
+                <div>
+                  <span className="text-sm font-bold">
+                    {locale === 'bn' ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের RJSC কর্তৃক নিবন্ধনপ্রাপ্ত সেবামূলক সংস্থা' : "Registered by RJSC of the Government of the People's Republic of Bangladesh"}
+                    <br />
+                    {locale === 'bn' ? "নিবন্ধন নম্বরঃ " : "Registration Number: "}
+                  </span>
+                  <span className="text-sm font-bold text-green-700">
+                    {locale === 'bn' ? "RAJS-576/2026" : "RAJS-576/2026"}
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Enhanced Main Heading - Reduced Size */}
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-black leading-[0.9] text-gray-900">
+              <h1 className="text-4xl lg:text-5xl font-black leading-[0.9] text-gray-900">
                 {locale === 'bn' ? (
                   <>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">বাংলাদেশে</span>
-                    <span className="block text-green-600 pt-2">নওমুসলিমদের</span>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent pt-3">পরিচর্যা কেন্দ্র</span>
+                    <p className='mb-2'>
+                      বাংলাদেশে <span className='text-green-600'>নওমুসলিমদের </span>
+                    </p>
+                    <p>
+                      পরিচর্যা কেন্দ্র
+                    </p>
                   </>
                 ) : (
                   <>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">New Muslim</span>
-                    <span className="block text-green-600 pt-2">Islamic Care Center</span>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent pt-3">Bangladesh</span>
+                    <p className='mb-2'>
+                      New Muslim <span className='text-green-600'>Care Center</span>
+                    </p>
+                    <p>
+                      Bangladesh
+                    </p>
                   </>
                 )}
               </h1>
@@ -81,7 +94,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-8">
               <Link
                 href={`/${locale}/under-development`}
-                className="group relative text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-500 flex items-center justify-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 overflow-hidden"
+                className="group relative text-white px-5 py-5 rounded-2xl font-bold text-lg transition-all duration-500 flex items-center justify-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 overflow-hidden"
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -94,7 +107,7 @@ export default function Hero() {
                   href="https://tiny.cc/newmuslimform"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                  className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                 >
                   <UserGroupIcon className="w-7 h-7 mr-4 text-green-700 group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-green-700">{locale === 'bn' ? 'দ্বীনি পরামর্শ প্রয়োজন?' : 'Religious guidance is needed?'}</span>
@@ -105,7 +118,7 @@ export default function Hero() {
                   href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                  className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                 >
                   <UserGroupIcon className="w-7 h-7 mr-4 text-green-700 group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-green-700">{locale === 'bn' ? 'ইসলাম গ্রহণ কেন জরুরি?' : 'Why accepting Islam is essential?'}</span>
@@ -140,35 +153,31 @@ export default function Hero() {
 
               {/* Header - Fixed Colors */}
               <div className="text-center mb-10 relative z-10">
-                <div className="relative inline-block mb-8">
+                {/* <div className="relative inline-block mb-8">
                   <Image src={logo} alt="new muslim aid logo" width={100} height={100} className='rounded-xl' />
 
-                </div>
-                <h3 className="text-4xl font-bold text-gray-900 mb-4">
-                  {locale === 'bn' ? 'ইসলামের পথে যাত্রা শুরু করুন আজই' : 'Begin Your Journey to Islam Today'}
+                </div> */}
+                <h3 className="text-3xl font-bold text-gray-900">
+                  {locale === 'bn' ? 'নিউমুসলিম এইড ফাউন্ডেশন কী?' : 'What is New Muslim Aid Foundation?'}
                 </h3>
-                <p className="text-gray-600">
-                  {locale === 'bn' ? "নিশ্চয়ই ইসলামই আল্লাহর নিকট একমাত্র ধর্ম (দ্বীন/জীবন ব্যবস্থা)। " : 'Completely free and confidential'}
-                  <span className="text-green-700 text-xs">- সুরা আলে ইমরান, আয়াতঃ ১৯</span>
-                </p>
-                <p className="text-gray-600">
-                  {locale === 'bn' ? "আর যে ব্যক্তি ইসলাম ব্যতীত অন্য কোন দ্বীন গ্রহণ করতে চাইবে কক্ষনো তার সেই দ্বীন কবূল করা হবে না এবং আখেরাতে সে ব্যক্তি ক্ষতিগ্রস্তদের অন্তর্ভুক্ত হবে। " : 'Completely free and confidential'}
-                  <span className="text-green-700 text-xs">- সুরা আলে ইমরান, আয়াতঃ ৮৫</span>
+                <h4 className='text-2xl font-bold py-2'>কারা এটি পরিচালনা করেন?</h4>
+                <p className="text-gray-600 text-xl">
+                  {locale === 'bn' ? "‘দাওয়াতুল ইসলাম বাংলাদেশ’ - এর নওমুসলিম বিভাগের  তত্ত্বাবধানে  ইসলাম গ্রহণেচ্ছুক ভাই- বোন, নওমুসলিম এবং অসহায় মানুষদের কল্যাণে নিবেদিত একটি সেবামূলক প্রতিষ্ঠান ‘নিউ মুসলিম এইড ফাউন্ডেশন’।" : "'New Muslim Aid Foundation' is a service-oriented organization dedicated to the welfare of brothers and sisters who wish to embrace Islam, new Muslims, and helpless people, under the supervision of the New Muslim Division of 'Dawatul Islam Bangladesh'."}
                 </p>
               </div>
 
               {/* Enhanced Stats */}
               <div className="grid grid-cols-3 gap-8 mb-10">
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০০+' : '100+'}</div>
+                  <div className="text-2xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০০+' : '100+'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সাহায্যপ্রাপ্ত' : 'Helped'}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৫+' : '25+'}</div>
+                  <div className="text-2xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৫+' : '25+'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'স্বেচ্ছাসেবক' : 'Volunteers'}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৪/৭' : '24/7'}</div>
+                  <div className="text-2xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৪/৭' : '24/7'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সেবা' : 'Service'}</div>
                 </div>
               </div>

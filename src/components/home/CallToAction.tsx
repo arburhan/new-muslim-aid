@@ -2,17 +2,17 @@
 
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { 
-  HeartIcon, 
-  UserGroupIcon, 
-  PhoneIcon, 
-  ArrowRightIcon 
+import {
+  HeartIcon,
+  UserGroupIcon,
+  PhoneIcon,
+  ArrowRightIcon
 } from '@heroicons/react/24/outline';
 
 // Facebook Icon Component
 const FacebookIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
   </svg>
 );
 
@@ -28,14 +28,14 @@ export default function CallToAction() {
       </div>
 
       <div className="relative z-10 text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 mt-12">
-          {locale === 'bn' 
-            ? 'ইসলামের পথে যাত্রা শুরু করুন আজই' 
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 mt-12">
+          {locale === 'bn'
+            ? 'ইসলামের পথে যাত্রা শুরু করুন আজই'
             : 'Begin Your Journey to Islam Today'
           }
         </h2>
-        
-        <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto leading-relaxed">
+
+        <p className="text-xl mb-12 text-gray-600 max-w-3xl mx-auto leading-relaxed">
           {locale === 'bn'
             ? 'আপনি যেখানেই থাকুন না কেন, আমরা আপনার পাশে আছি। আপনার ইসলামিক যাত্রায় আমাদের সাথে যুক্ত হোন।'
             : 'Wherever you are, we are here for you. Join us in your Islamic journey.'
@@ -49,18 +49,18 @@ export default function CallToAction() {
             <div className="w-16 h-16 bg-islamic-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
               <HeartIcon className="w-8 h-8 text-islamic-dark" />
             </div>
-            
+
             <h3 className="text-2xl font-bold mb-4">
               {locale === 'bn' ? 'ইসলামে নতুন?' : 'New to Islam?'}
             </h3>
-            
+
             <p className="text-white/80 mb-6 leading-relaxed">
               {locale === 'bn'
                 ? 'ইসলাম গ্রহণের সম্পূর্ণ গাইড এবং প্রয়োজনীয় সহায়তা পান।'
                 : 'Get complete guidance and necessary support for embracing Islam.'
               }
             </p>
-            
+
             <Link
               href={`/${locale}/under-development`}
               className="inline-flex items-center bg-islamic-accent hover:bg-yellow-500 text-islamic-dark font-bold py-3 px-6 rounded-lg transition-colors duration-200 group-hover:translate-y-1"
@@ -77,18 +77,18 @@ export default function CallToAction() {
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
               <UserGroupIcon className="w-8 h-8 text-islamic-primary" />
             </div>
-            
+
             <h3 className="text-2xl font-bold mb-4">
               {locale === 'bn' ? 'সাহায্য করতে চান?' : 'Want to Help?'}
             </h3>
-            
+
             <p className="text-white/80 mb-6 leading-relaxed">
               {locale === 'bn'
                 ? 'দ্বায়ী হয়ে অন্যদের ইসলামিক যাত্রায় সহায়তা করুন।'
                 : 'Become a volunteer and help others in their Islamic journey.'
               }
             </p>
-            
+
             <a
               href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
               target="_blank"
@@ -107,18 +107,18 @@ export default function CallToAction() {
             <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
               <PhoneIcon className="w-8 h-8 text-white" />
             </div>
-            
+
             <h3 className="text-2xl font-bold mb-4">
               {locale === 'bn' ? 'সাহায্য প্রয়োজন?' : 'Need Help?'}
             </h3>
-            
+
             <p className="text-white/80 mb-6 leading-relaxed">
               {locale === 'bn'
                 ? 'যেকোনো সমস্যায় আমাদের সাথে যোগাযোগ করুন। আমরা আছি।'
                 : 'Contact us for any problem. We are here for you.'
               }
             </p>
-            
+
             <Link
               href={`/${locale}/contact`}
               className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 group-hover:translate-y-1"
@@ -138,9 +138,9 @@ export default function CallToAction() {
           }}
         >
           {/* Background decorative elements */}
-          <div className="absolute top-0 right-0 w-32 h-32" style={{background: 'rgba(16,185,129,0.08)', borderRadius: '9999px', transform: 'translate(4rem, -4rem)'}}></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24" style={{background: 'rgba(52,211,153,0.08)', borderRadius: '9999px', transform: 'translate(-3rem, 3rem)'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40" style={{background: 'rgba(16,185,129,0.06)', borderRadius: '9999px', filter: 'blur(8px)'}}></div>
+          <div className="absolute top-0 right-0 w-32 h-32" style={{ background: 'rgba(16,185,129,0.08)', borderRadius: '9999px', transform: 'translate(4rem, -4rem)' }}></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24" style={{ background: 'rgba(52,211,153,0.08)', borderRadius: '9999px', transform: 'translate(-3rem, 3rem)' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40" style={{ background: 'rgba(16,185,129,0.06)', borderRadius: '9999px', filter: 'blur(8px)' }}></div>
           {/* Content */}
           <div className="relative z-10 text-center">
             {/* Enhanced Header */}
@@ -154,8 +154,8 @@ export default function CallToAction() {
                 </span>
               </div>
               <h3 className="text-4xl lg:text-5xl font-black mb-6 bg-gradient-to-r from-green-900 via-emerald-700 to-green-900 bg-clip-text text-transparent">
-                {locale === 'bn' 
-                  ? 'আমরা আপনার পাশে আছি' 
+                {locale === 'bn'
+                  ? 'আমরা আপনার পাশে আছি'
                   : 'We Are Here For You'
                 }
               </h3>
