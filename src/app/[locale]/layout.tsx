@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingButtons from '@/components/FloatingButtons';
 
 const locales = ['bn'];
 
@@ -18,14 +19,14 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const isValidLocale = locales.includes(locale);
-  
+
   if (!isValidLocale) {
     notFound();
   }
 
   return {
-    title: locale === 'bn' 
-      ? 'বাংলাদেশে নওমুসলিমদের সহায়তা' 
+    title: locale === 'bn'
+      ? 'বাংলাদেশে নওমুসলিমদের সহায়তা'
       : 'New Muslim Support - Bangladesh',
     description: locale === 'bn'
       ? 'ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা'
@@ -34,8 +35,8 @@ export async function generateMetadata({
       ? 'ইসলাম, মুসলিম, ধর্মান্তর, বাংলাদেশ, সহায়তা, গাইড'
       : 'Islam, Muslim, conversion, Bangladesh, support, guide',
     openGraph: {
-      title: locale === 'bn' 
-        ? 'বাংলাদেশে নওমুসলিমদের সহায়তা' 
+      title: locale === 'bn'
+        ? 'বাংলাদেশে নওমুসলিমদের সহায়তা'
         : 'New Muslim Support - Bangladesh',
       description: locale === 'bn'
         ? 'ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা'
@@ -78,14 +79,17 @@ export default async function LocaleLayout({
           <div className="min-h-screen flex flex-col">
             {/* Main Header */}
             <Header />
-            
+
             {/* Main Content */}
             <main className="flex-1">
               {children}
             </main>
-            
+
             {/* Footer */}
             <Footer />
+
+            {/* Floating WhatsApp & Messenger */}
+            <FloatingButtons />
           </div>
         </NextIntlClientProvider>
       </body>

@@ -40,18 +40,18 @@ export default function Hero() {
           {/* Enhanced Content */}
           <div className="space-y-8">
             {/* Premium Badge - Fixed Colors */}
-            <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-8 py-4 shadow-lg backdrop-blur-sm">
+            <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-3xl md:rounded-full px-8 py-4 shadow-lg backdrop-blur-sm">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
+                <div className="hidden md:flex w-8 h-8 rounded-full items-center justify-center" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
                   <StarIcon className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <span className="text-sm font-bold">
-                    {locale === 'bn' ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের RJSC কর্তৃক নিবন্ধনপ্রাপ্ত সেবামূলক সংস্থা' : "Registered by RJSC of the Government of the People's Republic of Bangladesh"}
+                  <span className=" font-bold">
+                    {locale === 'bn' ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের RJSC কর্তৃক নিবন্ধনপ্রাপ্ত সেবামূলক সংস্থা ।' : "Registered by RJSC of the Government of the People's Republic of Bangladesh"}
                     <br />
                     {locale === 'bn' ? "নিবন্ধন নম্বরঃ " : "Registration Number: "}
                   </span>
-                  <span className="text-sm font-bold text-green-700">
+                  <span className=" font-bold text-green-700">
                     {locale === 'bn' ? "RAJS-576/2026" : "RAJS-576/2026"}
                   </span>
                 </div>

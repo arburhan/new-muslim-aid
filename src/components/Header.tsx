@@ -228,7 +228,7 @@ export default function Header() {
 
       {/* Mobile Menu - Improved */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg max-h-[80vh] overflow-y-auto">
           <div className="container-custom py-4">
             <nav className="space-y-1">
               {allNavigation.map((item) => (
