@@ -198,16 +198,22 @@ export default function Footer() {
 
             <div className="flex items-center space-x-8">
               <Link
-                href={`/${locale}/under-development`}
+                href={`/${locale}/privacy-policy`}
                 className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
               >
                 {t('privacy')}
               </Link>
               <Link
-                href={`/${locale}/under-development`}
+                href={`/${locale}/terms`}
                 className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
               >
                 {t('terms')}
+              </Link>
+              <Link
+                href={`/${locale}/refund-policy`}
+                className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
+              >
+                {t('refund')}
               </Link>
             </div>
           </div>

@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 import BankDetails from "@/components/home/BankDetails";
-import DonationCardsWrapper from "./DonationCardsWrapper";
+import ZakatFundCardsWrapper from "./ZakatFundCardsWrapper";
 
 export const metadata = {
-    title: "দান করুন | NewMuslim Aid Foundation",
+    title: "যাকাত ফান্ড | NewMuslim Aid Foundation",
     description:
-        "নওমুসলিমদের জীবন পরিবর্তনে আপনার দান গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে দান করুন।",
+        "নওমুসলিমদের জীবন পরিবর্তনে আপনার যাকাত গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে যাকাত দিন।",
 };
 
-export default function DonationPage() {
+export default function ZakatFundPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
             {/* Hero Section */}
@@ -21,25 +21,25 @@ export default function DonationPage() {
                     <div className="text-center max-w-3xl mx-auto mb-4">
                         <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-5 py-2 rounded-full text-sm font-semibold mb-6">
                             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                            নিরাপদ অনলাইন দান
+                            নিরাপদ অনলাইন যাকাত
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
                             আপনার{" "}
                             <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                                দানে
+                                যাকাতে
                             </span>{" "}
                             বদলে যাবে
                             <br className="hidden md:block" /> একটি জীবন
                         </h1>
                         <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                            নওমুসলিমদের ইসলামিক শিক্ষা, পুনর্বাসন ও জীবন গঠনে আপনার সাদাকাহ
-                            গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে দান করুন।
+                            নওমুসলিমদের ইসলামিক শিক্ষা, পুনর্বাসন ও জীবন গঠনে আপনার যাকাত
+                            গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে যাকাত দিন।
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Donation Cards Section */}
+            {/* Zakat Cards Section */}
             <section className="py-6 md:py-10">
                 <div className="container-custom max-w-4xl">
                     <Suspense
@@ -49,7 +49,7 @@ export default function DonationPage() {
                             </div>
                         }
                     >
-                        <DonationCardsWrapper />
+                        <ZakatFundCardsWrapper />
                     </Suspense>
                 </div>
             </section>
@@ -59,10 +59,10 @@ export default function DonationPage() {
                 <div className="container-custom">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                            অথবা সরাসরি ব্যাংকে দান করুন
+                            অথবা সরাসরি ব্যাংকে যাকাত দিন
                         </h2>
                         <p className="text-gray-500">
-                            আপনি চাইলে সরাসরি ব্যাংক ট্রান্সফারের মাধ্যমেও দান করতে পারেন
+                            আপনি চাইলে সরাসরি ব্যাংক ট্রান্সফারের মাধ্যমেও যাকাত দিতে পারেন
                         </p>
                     </div>
                     <BankDetails />
