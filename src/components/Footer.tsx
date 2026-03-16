@@ -35,7 +35,7 @@ export default function Footer() {
   const supportLinks = [
     { name: t('projects'), href: `/${locale}/under-development` },
     { name: t('volunteer'), href: 'https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2' },
-    { name: t('about'), href: `/${locale}/under-development` },
+    { name: t('about'), href: `/${locale}/about` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
@@ -81,7 +81,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">{locale === 'bn' ? 'ইমেইল' : 'Email'}</p>
-                  <p className="text-gray-300">aidnewmuslim@gmail.com</p>
+                  <p className="text-gray-300">info@newmuslimaid.com</p>
                 </div>
               </div>
 
@@ -198,16 +198,22 @@ export default function Footer() {
 
             <div className="flex items-center space-x-8">
               <Link
-                href={`/${locale}/under-development`}
+                href={`/${locale}/privacy-policy`}
                 className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
               >
                 {t('privacy')}
               </Link>
               <Link
-                href={`/${locale}/under-development`}
+                href={`/${locale}/terms`}
                 className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
               >
                 {t('terms')}
+              </Link>
+              <Link
+                href={`/${locale}/refund-policy`}
+                className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
+              >
+                {t('refund')}
               </Link>
             </div>
           </div>

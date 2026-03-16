@@ -16,12 +16,12 @@ import {
   PencilSquareIcon
 } from '@heroicons/react/24/outline';
 
-import {HomeModernIcon} from '@heroicons/react/24/solid'
+import { HomeModernIcon } from '@heroicons/react/24/solid'
 
 export default function NavigationCards() {
   const locale = useLocale();
   const t = useTranslations('home');
-  
+
 
   const cards = [
     {
@@ -116,92 +116,92 @@ export default function NavigationCards() {
       hoverShadow: 'hover:shadow-green-500/25',
       featured: true
     },
-   { 
-    id:'legalAssist',
-    title: t('cards.legalAssist.title'),
-    description: t('cards.legalAssist.description'),
-    href: `/${locale}/under-development`,
-    icon: ShieldCheckIcon,
-    gradient: 'from-yellow-500 to-amber-500',
-    bgGradient: 'from-yellow-50 to-amber-50', 
-    borderColor: 'border-green-500/20',
-    hoverShadow: 'hover:shadow-yellow-500/25',
-  },
-  {
-    id:'affidavit',
-    title: t('cards.affidavit.title'),
-    description: t('cards.affidavit.description'),
-    href: `/${locale}/under-development`,
-    icon: BookOpenIcon,
-    gradient: 'from-pink-500 to-purple-500',
-    bgGradient: 'from-pink-50 to-purple-50',
-    borderColor: 'border-pink-500/20',
-    hoverShadow: 'hover:shadow-pink-500/25',
-  },
-  {
-    id:'renameCertificate',
-    title: t('cards.renameCertificate.title'),
-    description: t('cards.renameCertificate.description'),
-    href: `/${locale}/under-development`,
-    icon: PencilSquareIcon,
-    gradient: 'from-green-500 to-emerald-500',
-    bgGradient: 'from-green-50 to-emerald-50',
-    borderColor: 'border-green-500/20',
-    hoverShadow: 'hover:shadow-green-500/25',
-  },
-  {
-    id:'shelter',
-    title: t('cards.shelter.title'),
-    description: t('cards.shelter.description'),
-    href: `/${locale}/under-development`,
-    icon: HomeModernIcon,
-    gradient: 'from-blue-500 to-cyan-500',
-    bgGradient: 'from-blue-50 to-cyan-50',
-    borderColor: 'border-blue-500/20',
-    hoverShadow: 'hover:shadow-blue-500/25',
-  },
-  {
-    id:'securityEnsure',
-    title: t('cards.securityEnsure.title'),
-    description: t('cards.securityEnsure.description'),
-    href: `/${locale}/under-development`,
-    icon: ShieldCheckIcon,
-    gradient: 'from-red-500 to-yellow-500',
-    bgGradient: 'from-red-50 to-yellow-50',
-    borderColor: 'border-red-500/20',
-    hoverShadow: 'hover:shadow-red-500/25',
-  },
-  {
-    id:'gurdian',
-    title: t('cards.gurdian.title'),
-    description: t('cards.gurdian.description'),
-    href: `/${locale}/under-development`,
-    icon: UserGroupIcon,
-    gradient: 'from-purple-500 to-pink-500',
-    bgGradient: 'from-purple-50 to-pink-50',
-    borderColor: 'border-purple-500/20',
-    hoverShadow: 'hover:shadow-purple-500/25',
-  },
-  {
-    id:'bibaho',
-    title: t('cards.bibaho.title'),
-    description: t('cards.bibaho.description'),
-    href: `/${locale}/under-development`,
-    icon: HeartIcon,
-    gradient: 'from-emerald-500 to-green-500',
-    bgGradient: 'from-emerald-50 to-green-50',
-    borderColor: 'border-emerald-500/20',
-  },
-  {
-    id:'deenShikkha',
-    title: t('cards.deenShikkha.title'),
-    description: t('cards.deenShikkha.description'),
-    href: `/${locale}/under-development`,
-    icon: BookOpenIcon,
-    gradient: 'from-indigo-500 to-blue-500',
-    bgGradient: 'from-indigo-50 to-blue-50',
-    borderColor: 'border-indigo-500/20',
-  }
+    {
+      id: 'legalAssist',
+      title: t('cards.legalAssist.title'),
+      description: t('cards.legalAssist.description'),
+      href: `/${locale}/under-development`,
+      icon: ShieldCheckIcon,
+      gradient: 'from-yellow-500 to-amber-500',
+      bgGradient: 'from-yellow-50 to-amber-50',
+      borderColor: 'border-green-500/20',
+      hoverShadow: 'hover:shadow-yellow-500/25',
+    },
+    {
+      id: 'affidavit',
+      title: t('cards.affidavit.title'),
+      description: t('cards.affidavit.description'),
+      href: `/${locale}/under-development`,
+      icon: BookOpenIcon,
+      gradient: 'from-pink-500 to-purple-500',
+      bgGradient: 'from-pink-50 to-purple-50',
+      borderColor: 'border-pink-500/20',
+      hoverShadow: 'hover:shadow-pink-500/25',
+    },
+    {
+      id: 'renameCertificate',
+      title: t('cards.renameCertificate.title'),
+      description: t('cards.renameCertificate.description'),
+      href: `/${locale}/under-development`,
+      icon: PencilSquareIcon,
+      gradient: 'from-green-500 to-emerald-500',
+      bgGradient: 'from-green-50 to-emerald-50',
+      borderColor: 'border-green-500/20',
+      hoverShadow: 'hover:shadow-green-500/25',
+    },
+    {
+      id: 'shelter',
+      title: t('cards.shelter.title'),
+      description: t('cards.shelter.description'),
+      href: `/${locale}/under-development`,
+      icon: HomeModernIcon,
+      gradient: 'from-blue-500 to-cyan-500',
+      bgGradient: 'from-blue-50 to-cyan-50',
+      borderColor: 'border-blue-500/20',
+      hoverShadow: 'hover:shadow-blue-500/25',
+    },
+    {
+      id: 'securityEnsure',
+      title: t('cards.securityEnsure.title'),
+      description: t('cards.securityEnsure.description'),
+      href: `/${locale}/under-development`,
+      icon: ShieldCheckIcon,
+      gradient: 'from-red-500 to-yellow-500',
+      bgGradient: 'from-red-50 to-yellow-50',
+      borderColor: 'border-red-500/20',
+      hoverShadow: 'hover:shadow-red-500/25',
+    },
+    {
+      id: 'gurdian',
+      title: t('cards.gurdian.title'),
+      description: t('cards.gurdian.description'),
+      href: `/${locale}/under-development`,
+      icon: UserGroupIcon,
+      gradient: 'from-purple-500 to-pink-500',
+      bgGradient: 'from-purple-50 to-pink-50',
+      borderColor: 'border-purple-500/20',
+      hoverShadow: 'hover:shadow-purple-500/25',
+    },
+    {
+      id: 'bibaho',
+      title: t('cards.bibaho.title'),
+      description: t('cards.bibaho.description'),
+      href: `/${locale}/under-development`,
+      icon: HeartIcon,
+      gradient: 'from-emerald-500 to-green-500',
+      bgGradient: 'from-emerald-50 to-green-50',
+      borderColor: 'border-emerald-500/20',
+    },
+    {
+      id: 'deenShikkha',
+      title: t('cards.deenShikkha.title'),
+      description: t('cards.deenShikkha.description'),
+      href: `/${locale}/under-development`,
+      icon: BookOpenIcon,
+      gradient: 'from-indigo-500 to-blue-500',
+      bgGradient: 'from-indigo-50 to-blue-50',
+      borderColor: 'border-indigo-500/20',
+    }
 
 
   ];
@@ -224,12 +224,12 @@ export default function NavigationCards() {
               {locale === 'bn' ? 'আমাদের সেবাসমূহ' : 'Our Services'}
             </span>
           </div>
-          
-          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+
+          <h2 className="text-2xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
             {t('navigationTitle')}
           </h2>
-          
-          <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {t('navigationSubtitle')}
           </p>
         </div>
@@ -242,9 +242,8 @@ export default function NavigationCards() {
               <Link
                 key={card.id}
                 href={card.href}
-                className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${
-                  card.featured ? 'lg:col-span-1 md:col-span-1' : ''
-                }`}
+                className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${card.featured ? 'lg:col-span-1 md:col-span-1' : ''
+                  }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Background pattern */}
@@ -266,7 +265,7 @@ export default function NavigationCards() {
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">
@@ -300,7 +299,7 @@ export default function NavigationCards() {
               {locale === 'bn' ? 'আরও কোনো প্রশ্ন আছে?' : 'Have More Questions?'}
             </h3>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              {locale === 'bn' 
+              {locale === 'bn'
                 ? 'আমাদের বিশেষজ্ঞ দল আপনার সব প্রশ্নের উত্তর দিতে প্রস্তুত। যেকোনো সময় যোগাযোগ করুন।'
                 : 'Our expert team is ready to answer all your questions. Contact us anytime for personalized guidance.'
               }

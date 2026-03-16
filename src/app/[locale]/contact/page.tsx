@@ -35,10 +35,10 @@ export default function ContactPage() {
     {
       icon: EnvelopeIcon,
       title: locale === "bn" ? "ইমেইল" : "Email",
-      value: "aidnewmuslim@gmail.com",
+      value: "info@newmuslimaid.com",
       description:
         locale === "bn" ? "সাধারণ প্রশ্নের জন্য" : "For General Inquiries",
-      link: "mailto:aidnewmuslim@gmail.com",
+      link: "mailto:info@newmuslimaid.com",
     },
     {
       icon: MapPinIcon,
