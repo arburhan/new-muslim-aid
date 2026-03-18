@@ -54,9 +54,7 @@ export default function Hero() {
                   <span className=" font-bold text-green-700">
                     {locale === 'bn' ? "RAJS-576/2026" : "RAJS-576/2026"}
                   </span>
-                </div>
-                <div>
-                   <span className="font-bold">
+                  <span className="font-bold pt-1">
                        {locale === 'bn'
                              ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ট্রেড লাইসেন্স নম্বরঃ '
                              : "Trade License Number: "}
@@ -64,7 +62,8 @@ export default function Hero() {
                  <span className="font-bold text-green-700">
                   {locale === 'bn' ? "69832030549" : "69832030549"}
                 </span>
-              </div>
+                </div>
+        
               </div>
             </div>
 
