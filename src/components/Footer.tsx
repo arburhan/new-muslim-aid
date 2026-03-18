@@ -264,7 +264,7 @@ export default function Footer() {
           {/* Sub-note */}
           <p className="mt-4 text-xs text-gray-500 leading-relaxed">
             {locale === 'bn'
-              ? '* উপরোক্ত তথ্য গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ট্রেড লাইসেন্স অনুযায়ী প্রদত্ত।'
+              ? '* উপর্যুক্ত তথ্য গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ট্রেড লাইসেন্স অনুযায়ী প্রদত্ত।'
               : '* The above information is provided in accordance with the Trade License issued by the Government of the People\'s Republic of Bangladesh.'}
           </p>
         </div>
