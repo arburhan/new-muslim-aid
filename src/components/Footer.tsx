@@ -191,10 +191,23 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-300">
-              © 2024 {locale === 'bn' ? 'নিউমুসলিম এইড ফাউন্ডেশন' : 'New Muslim Support'}.
-              {locale === 'bn' ? ' সকল অধিকার সংরক্ষিত।' : ' All rights reserved.'}
-            </div>
+            <div>
+  <div className="text-gray-300">
+    © 2024 {locale === 'bn' ? 'নিউমুসলিম এইড ফাউন্ডেশন' : 'New Muslim Support'}.
+    {locale === 'bn' ? ' সকল অধিকার সংরক্ষিত।' : ' All rights reserved.'}
+  </div>
+
+  <div className="mt-1 text-sm md:text-base text-gray-400">
+    <span className="font-bold">
+      {locale === 'bn'
+        ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ট্রেড লাইসেন্স নম্বরঃ '
+        : "Trade License Number: "}
+    </span>
+    <span className="font-bold text-green-700">
+      {locale === 'bn' ? "69832030549" : "69832030549"}
+    </span>
+  </div>
+</div>
 
             <div className="flex items-center space-x-8">
               <Link
