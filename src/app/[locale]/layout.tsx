@@ -25,6 +25,7 @@ export async function generateMetadata({
   }
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://newmuslimaid.com'),
     title: locale === 'bn'
       ? 'বাংলাদেশে নওমুসলিমদের সহায়তা'
       : 'New Muslim Support - Bangladesh',

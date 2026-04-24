@@ -188,8 +188,101 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {/* সরকারি নিবন্ধন তথ্য - Government Registration Info */}
         <div className="border-t border-gray-700 mt-12 pt-8">
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-5">
+              <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <h4 className="text-lg font-bold text-white">
+                {locale === 'bn' ? 'সরকারি নিবন্ধন তথ্য' : 'Government Registration Info'}
+              </h4>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* ট্রেড লাইসেন্স */}
+              <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-xs font-medium mb-1">
+                      {locale === 'bn' ? 'ট্রেড লাইসেন্স নম্বর' : 'Trade License No.'}
+                    </p>
+                    <p className="text-green-400 font-bold text-lg">69832030549</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* সেবার ধরণ */}
+              <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-xs font-medium mb-1">
+                      {locale === 'bn' ? 'সেবার ধরণ' : 'Service Type'}
+                    </p>
+                    <p className="text-white font-semibold">
+                      {locale === 'bn' ? 'পরামর্শ, গবেষণা, প্রশিক্ষণ কেন্দ্র' : 'Counseling, Research, Training Center'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* নিবন্ধিত ঠিকানা */}
+              <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPinIcon className="w-4 h-4 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-xs font-medium mb-1">
+                      {locale === 'bn' ? 'নিবন্ধিত ঠিকানা' : 'Registered Address'}
+                    </p>
+                    <p className="text-white font-semibold">
+                      {locale === 'bn' ? 'পুঠিয়া, ১ নং ওয়ার্ড, পুঠিয়া পৌরসভা, রাজশাহী' : 'Puthia, Ward 1, Puthia Municipality, Rajshahi'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-gray-500 text-xs mt-3 italic">
+              * {locale === 'bn'
+                ? 'উপরোক্ত তথ্য গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ট্রেড লাইসেন্স অনুযায়ী প্রদত্ত।'
+                : 'The above information is provided as per the Trade License of the Government of the People\'s Republic of Bangladesh.'}
+            </p>
+          </div>
+        </div>
+
+        {/* Payment Methods */}
+        <div className="border-t border-gray-700 pt-8">
+          <div className="flex flex-col items-center space-y-4 mb-6">
+            <p className="text-gray-400 text-sm font-medium">
+              {locale === 'bn' ? 'আমাদের পেমেন্ট মাধ্যমসমূহ' : 'Our Payment Methods'}
+            </p>
+            <div className="bg-white rounded-xl p-3 inline-block shadow-sm">
+              <Image
+                src="/images/paystation/image.png"
+                alt="Accepted Payment Methods - bKash, Nagad, Rocket, Visa, Mastercard, and more"
+                width={1000}
+                height={80}
+                className="h-auto w-auto max-w-full max-h-16 md:max-h-20 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-300">
               © 2024 {locale === 'bn' ? 'নিউমুসলিম এইড ফাউন্ডেশন' : 'New Muslim Support'}.

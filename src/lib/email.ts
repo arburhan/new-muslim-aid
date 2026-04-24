@@ -6,61 +6,63 @@
 import nodemailer from 'nodemailer';
 
 function getTransporter() {
-    return nodemailer.createTransport({
-        host: process.env.SMTP_HOST || 'smtp.gmail.com',
-        port: parseInt(process.env.SMTP_PORT || '587'),
-        secure: false, // true for 465, false for 587
-        auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASSWORD,
-        },
-    });
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false, // true for 465, false for 587
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
+    },
+  });
 }
 
 interface InvoiceParams {
-    donorName: string;
-    donorEmail: string;
-    amount: string;
-    transactionId: string;
-    transactionDate: string;
-    paymentMethod: string;
+  donorName: string;
+  donorEmail: string;
+  amount: string;
+  transactionId: string;
+  transactionDate: string;
+  paymentMethod: string;
 }
 
 /**
  * Send a donation invoice email to the donor
  */
 export async function sendDonationInvoice(params: InvoiceParams): Promise<boolean> {
-    try {
-        const transporter = getTransporter();
+  try {
+    const transporter = getTransporter();
 
-        const fromName = process.env.SMTP_FROM_NAME || 'NewMuslim Aid Foundation';
-        const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+    const fromName = process.env.SMTP_FROM_NAME || 'NewMuslim Aid Foundation';
+    const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
 
-        const htmlContent = generateInvoiceHTML(params);
+    const htmlContent = generateInvoiceHTML(params);
 
-        await transporter.sendMail({
-            from: `"${fromName}" <${fromEmail}>`,
-            to: params.donorEmail,
-            subject: `দানের রসিদ - NewMuslim Aid Foundation | Transaction: ${params.transactionId}`,
-            html: htmlContent,
-        });
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: params.donorEmail,
+      subject: `দানের রসিদ - NewMuslim Aid Foundation | Transaction: ${params.transactionId}`,
+      html: htmlContent,
+    });
 
-        console.log(`✅ Invoice email sent to ${params.donorEmail} for transaction ${params.transactionId}`);
-        return true;
-    } catch (error) {
-        console.error('❌ Failed to send invoice email:', error);
-        return false;
-    }
+    return true;
+  } catch (error) {
+    console.error('❌ Failed to send invoice email:', error);
+    return false;
+  }
 }
 
 function generateInvoiceHTML(params: InvoiceParams): string {
-    const formattedAmount = new Intl.NumberFormat('bn-BD', {
-        style: 'currency',
-        currency: 'BDT',
-        minimumFractionDigits: 0,
-    }).format(parseFloat(params.amount));
+  const formattedAmount = new Intl.NumberFormat('bn-BD', {
+    style: 'currency',
+    currency: 'BDT',
+    minimumFractionDigits: 0,
+  }).format(parseFloat(params.amount));
 
-    return `
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://newmuslimaid.com').replace(/\/$/, '');
+  const logoUrl = `${siteUrl}/logo.png`;
+
+  return `
 <!DOCTYPE html>
 <html lang="bn" dir="ltr">
 <head>
@@ -76,11 +78,12 @@ function generateInvoiceHTML(params: InvoiceParams): string {
           <!-- Header -->
           <tr>
             <td style="background:linear-gradient(135deg,#1B4332 0%,#2D5A40 50%,#006A4E 100%);padding:40px 40px 30px;text-align:center;">
+              <img src="${logoUrl}" alt="NewMuslim Aid Foundation" width="80" height="80" style="display:block;margin:0 auto 16px;border-radius:12px;width:80px;height:80px;object-fit:contain;" />
               <h1 style="color:#FFD700;font-size:28px;margin:0 0 8px;font-weight:800;">
-                ☪ NewMuslim Aid Foundation
+                NewMuslim Aid Foundation
               </h1>
               <p style="color:rgba(255,255,255,0.9);font-size:14px;margin:0;">
-                বাংলাদেশে নওমুসলিমদের সহায়তা
+                বাংলাদেশে নওমুসলিমদের পরিচর্যা কেন্দ্র
               </p>
             </td>
           </tr>
@@ -159,7 +162,7 @@ function generateInvoiceHTML(params: InvoiceParams): string {
             <td style="padding:0 40px 24px;">
               <div style="background:linear-gradient(135deg,#fefce8,#fffbeb);border:1px solid #fde68a;border-radius:12px;padding:20px 24px;text-align:center;">
                 <p style="color:#92400e;font-size:18px;font-weight:600;margin:0 0 8px;font-style:italic;">
-                  "যে ব্যক্তি আল্লাহর রাস্তায় দান করে, তার প্রতিদান সাতশত গুণ বৃদ্ধি পায়।"
+                  "যারা নিজেদের ধন সম্পদ আল্লাহ্‌র পথে ব্যয় করে তাদের উপমা একটি বীজের মত, যা সাতটি শীষ উৎপাদন করে, প্রত্যেক শীষে একশ শস্যদানা। আর আল্লাহ্‌ যাকে ইচ্ছে বহুগুণে বৃদ্ধি করে দেন। আর আল্লাহ্‌ সর্বব্যাপী- প্রাচুর্যময়, সর্বজ্ঞ ।"
                 </p>
                 <p style="color:#a16207;font-size:13px;margin:0;">— সূরা আল-বাকারা, ২:২৬১</p>
               </div>

@@ -17,7 +17,7 @@ export default function BankDetails() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                             <HeartIcon className="w-8 h-8 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -31,7 +31,7 @@ export default function BankDetails() {
                     </div>
 
                     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                             <HandRaisedIcon className="w-8 h-8 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -45,7 +45,7 @@ export default function BankDetails() {
                     </div>
 
                     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                             <BanknotesIcon className="w-8 h-8 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -67,7 +67,7 @@ export default function BankDetails() {
                 </h2>
 
                 <div className="max-w-3xl mx-auto">
-                    <div className="bg-gradient-to-br from-white to-green-50 rounded-3xl p-10 shadow-2xl border-2 border-green-200">
+                    <div className="bg-linear-to-br from-white to-green-50 rounded-3xl p-10 shadow-2xl border-2 border-green-200">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {/* Account Name */}
                             <div className="bg-white rounded-xl px-6 py-3">
@@ -125,7 +125,7 @@ export default function BankDetails() {
 
             {/* দাতা সদস্য হোন - Donation CTA */}
             <div className="mt-16 text-center">
-                <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto relative overflow-hidden">
+                <div className="bg-linear-to-r from-green-600 via-emerald-600 to-green-700 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto relative overflow-hidden">
                     {/* Decorative elements */}
                     <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 -translate-x-16"></div>
                     <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full translate-y-20 translate-x-20"></div>

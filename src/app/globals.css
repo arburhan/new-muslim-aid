@@ -380,6 +380,18 @@
     to { transform: rotate(360deg); }
   }
 
+  /* Confetti animation for donation success */
+  @keyframes confettiFall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
   /* Responsive font adjustments */
   @media (max-width: 640px) {
     html.font-bengali,
