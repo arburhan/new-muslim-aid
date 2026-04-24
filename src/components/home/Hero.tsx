@@ -12,9 +12,7 @@ import {
   GlobeAltIcon,
   HeartIcon
 } from '@heroicons/react/24/solid';
-import Image from 'next/image';
 
-import logo from '../../../public/logo.png';
 
 export default function Hero() {
   const locale = useLocale();
@@ -97,7 +95,7 @@ export default function Hero() {
                 className="group relative text-white px-5 py-5 rounded-2xl font-bold text-lg transition-all duration-500 flex items-center justify-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 overflow-hidden"
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
-                <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 <span className="relative z-10 text-white">{locale === 'bn' ? 'ইসলাম গ্রহণ করতে করণীয়' : 'Guidelines for accepting Islam'}</span>
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
@@ -243,7 +241,7 @@ export default function Hero() {
         <div className="mt-20 text-center">
           <div className="inline-flex items-center space-x-4 bg-white/90 backdrop-blur-sm rounded-full px-4 md:px-8 py-4 shadow-xl">
             <GlobeAltIcon className="w-8 h-8 text-green-700" />
-            <span className="text-lg font-bold text-gray-800">
+            <span className="text-md md:text-lg font-bold text-gray-800">
               {locale === 'bn' ? 'বিশ্বব্যাপী মুসলিম সম্প্রদায়ের সাথে যুক্ত হোন' : 'Join the Global Muslim Community'}
             </span>
             <div className="flex space-x-1">

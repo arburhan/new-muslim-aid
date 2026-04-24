@@ -52,7 +52,7 @@ export default function NavigationCards() {
       id: 'new-muslim-guide',
       title: t('cards.newMuslimGuide.title'),
       description: t('cards.newMuslimGuide.description'),
-      href: `/${locale}/under-development`,
+      href: `/${locale}/guidelines`,
       icon: UserGroupIcon,
       gradient: 'from-emerald-500 to-green-500',
       bgGradient: 'from-emerald-50 to-green-50',
