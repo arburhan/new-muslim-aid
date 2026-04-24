@@ -58,13 +58,13 @@ export default function Testimonials() {
   ];
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
@@ -115,12 +115,12 @@ export default function Testimonials() {
         {/* Main Testimonial Card */}
         <div className="bg-white/95 rounded-2xl shadow-2xl border border-orange-200 p-8 md:p-12 relative overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute top-0 right-0 w-32 h-32" style={{background: 'rgba(22,163,74,0.10)', borderRadius: '9999px', transform: 'translate(4rem, -4rem)'}}></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24" style={{background: 'rgba(245,158,66,0.20)', borderRadius: '9999px', transform: 'translate(-3rem, 3rem)'}}></div>
-          
+          <div className="absolute top-0 right-0 w-32 h-32" style={{ background: 'rgba(22,163,74,0.10)', borderRadius: '9999px', transform: 'translate(4rem, -4rem)' }}></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24" style={{ background: 'rgba(245,158,66,0.20)', borderRadius: '9999px', transform: 'translate(-3rem, 3rem)' }}></div>
+
           {/* Quote Icon */}
           <div className="text-6xl text-green-400/20 mb-6">&ldquo;</div>
-          
+
           {/* Content */}
           <div className="relative z-10">
             {/* Rating */}
@@ -151,7 +151,7 @@ export default function Testimonials() {
               </div>
 
               {/* Avatar */}
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-orange-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+              <div className="w-16 h-16 bg-linear-to-br from-green-500 to-orange-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                 {currentTestimonial.isAnonymous ? '?' : currentTestimonial.name.charAt(0)}
               </div>
             </div>
@@ -173,11 +173,10 @@ export default function Testimonials() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                  index === currentIndex 
-                    ? 'bg-green-700' 
+                className={`w-3 h-3 rounded-full transition-colors duration-200 ${index === currentIndex
+                    ? 'bg-green-700'
                     : 'bg-gray-300 hover:bg-gray-400'
-                }`}
+                  }`}
               />
             ))}
           </div>

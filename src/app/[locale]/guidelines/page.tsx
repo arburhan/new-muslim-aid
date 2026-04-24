@@ -161,9 +161,9 @@ export default function GuidelinesPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* Hero Section */}
-            <div className="bg-gradient-to-r from-green-600 to-blue-700 text-white py-12">
+            <div className="bg-linear-to-r from-green-600 to-blue-700 text-white py-12">
                 <div className="container-custom">
                     <div className="text-center">
                         <h1 className="text-5xl lg:text-6xl font-black mb-6">
@@ -255,7 +255,7 @@ export default function GuidelinesPage() {
                                 className="group flex flex-col items-center text-center transform hover:-translate-y-2 transition-all duration-300"
                             >
                                 <div className="relative mb-3 md:mb-4">
-                                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-green-400 to-blue-500 p-1 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-linear-to-br from-green-400 to-blue-500 p-1 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
                                         <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                                             <Image src={scholar.image} alt={scholar.name} className="object-cover" />
                                         </div>
@@ -314,7 +314,7 @@ export default function GuidelinesPage() {
                 </div>
 
                 {/* Call to Action */}
-                <div className="text-center bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-3xl p-12 shadow-2xl">
+                <div className="text-center bg-linear-to-r from-green-600 to-blue-600 text-white rounded-3xl p-12 shadow-2xl">
                     <h3 className="text-3xl font-bold mb-4">
                         {locale === "bn" ? "আরও সাহায্য প্রয়োজন?" : "Need More Help?"}
                     </h3>

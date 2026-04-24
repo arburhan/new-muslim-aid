@@ -79,7 +79,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
       {/* Top Emergency Bar - Fixed */}
-      <div className="bg-gradient-to-r from-red-600 to-red-500 text-white py-2.5">
+      <div className="bg-linear-to-r from-red-600 to-red-500 text-white py-2.5">
         <div className="container-custom">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-3">

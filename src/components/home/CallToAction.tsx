@@ -145,15 +145,15 @@ export default function CallToAction() {
           <div className="relative z-10 text-center">
             {/* Enhanced Header */}
             <div className="mb-8">
-              <div className="inline-flex items-center bg-gradient-to-r from-emerald-200/60 to-yellow-100/60 rounded-full px-6 py-3 mb-6 border border-emerald-300/50">
-                <div className="w-6 h-6 bg-gradient-to-br from-emerald-300 to-yellow-200 rounded-full flex items-center justify-center mr-3">
+              <div className="inline-flex items-center bg-linear-to-r from-emerald-200/60 to-yellow-100/60 rounded-full px-6 py-3 mb-6 border border-emerald-300/50">
+                <div className="w-6 h-6 bg-linear-to-br from-emerald-300 to-yellow-200 rounded-full flex items-center justify-center mr-3">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
                 <span className="text-sm font-bold text-green-900 uppercase tracking-wider">
                   {locale === 'bn' ? 'বিশ্বস্ত এবং নির্ভরযোগ্য' : 'Trusted & Reliable'}
                 </span>
               </div>
-              <h3 className="text-4xl lg:text-5xl font-black mb-6 bg-gradient-to-r from-green-900 via-emerald-700 to-green-900 bg-clip-text text-transparent">
+              <h3 className="text-4xl lg:text-5xl font-black mb-6 bg-linear-to-r from-green-900 via-emerald-700 to-green-900 bg-clip-text text-transparent">
                 {locale === 'bn'
                   ? 'আমরা আপনার পাশে আছি'
                   : 'We Are Here For You'
@@ -169,7 +169,7 @@ export default function CallToAction() {
             {/* Enhanced Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="group bg-white rounded-2xl p-6 border border-emerald-200 hover:border-emerald-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-300 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-linear-to-br from-emerald-300 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="w-6 h-6 bg-emerald-100 rounded-full"></div>
                 </div>
                 <h4 className="text-lg font-bold text-green-900 mb-2">
@@ -180,7 +180,7 @@ export default function CallToAction() {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 border border-emerald-200 hover:border-emerald-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-linear-to-br from-emerald-200 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="w-6 h-6 bg-emerald-100 rounded-full"></div>
                 </div>
                 <h4 className="text-lg font-bold text-green-900 mb-2">
@@ -191,7 +191,7 @@ export default function CallToAction() {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 border border-emerald-200 hover:border-emerald-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-linear-to-br from-emerald-200 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="w-6 h-6 bg-emerald-100 rounded-full"></div>
                 </div>
                 <h4 className="text-lg font-bold text-green-900 mb-2">
@@ -202,7 +202,7 @@ export default function CallToAction() {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 border border-emerald-200 hover:border-emerald-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-linear-to-br from-emerald-200 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="w-6 h-6 bg-emerald-100 rounded-full"></div>
                 </div>
                 <h4 className="text-lg font-bold text-green-900 mb-2">

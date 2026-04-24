@@ -15,9 +15,9 @@ export default function AboutPage() {
     const locale = useLocale();
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* ========== Hero Section ========== */}
-            <div className="relative bg-gradient-to-r from-green-700 via-green-600 to-teal-600 text-white py-20 md:py-28 overflow-hidden">
+            <div className="relative bg-linear-to-r from-green-700 via-green-600 to-teal-600 text-white py-20 md:py-28 overflow-hidden">
                 {/* Decorative circles */}
                 <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3" />
@@ -48,7 +48,7 @@ export default function AboutPage() {
             <section className="py-16 md:py-20">
                 <div className="container-custom max-w-5xl">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">
-                        <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                        <span className="bg-linear-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                             নিউমুসলিম এইড ফাউন্ডেশন
                         </span>{" "}
                         কী ও কেন?
@@ -112,7 +112,7 @@ export default function AboutPage() {
                             </span>{" "}
                             কর্তৃক নিবন্ধনপ্রাপ্ত।
                         </p>
-                        <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 border border-green-200">
+                        <div className="bg-linear-to-r from-green-50 to-teal-50 rounded-2xl p-6 border border-green-200">
                             <p className="text-gray-700 text-lg leading-relaxed">
                                 <span className="font-bold text-green-700">
                                     প্রতিষ্ঠানটি পরিচালনার দায়িত্বে রয়েছেন —
@@ -136,7 +136,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                         {/* Dhaka Office */}
                         <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                            <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-5">
+                            <div className="w-14 h-14 bg-linear-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-5">
                                 <MapPinIcon className="w-7 h-7 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-1">
@@ -150,7 +150,7 @@ export default function AboutPage() {
 
                         {/* Rajshahi Office */}
                         <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                            <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mb-5">
+                            <div className="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mb-5">
                                 <MapPinIcon className="w-7 h-7 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-1">
@@ -164,7 +164,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Contact Numbers */}
-                    <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-3xl p-8 md:p-12 text-center">
+                    <div className="bg-linear-to-r from-green-600 to-teal-600 text-white rounded-3xl p-8 md:p-12 text-center">
                         <PhoneIcon className="w-12 h-12 mx-auto mb-4 opacity-90" />
                         <h3 className="text-2xl font-bold mb-6">যোগাযোগ</h3>
                         <div className="flex flex-wrap justify-center gap-4">

@@ -99,9 +99,9 @@ const boardMembers = [
 
 export default function BoardPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* Hero */}
-            <div className="bg-gradient-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-20">
+            <div className="bg-linear-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-20">
                 <div className="container-custom text-center">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
                         পরিচালনা পর্ষদ
@@ -123,7 +123,7 @@ export default function BoardPage() {
                             >
                                 <div className="flex flex-col md:flex-row">
                                     {/* Image */}
-                                    <div className="relative w-full md:w-48 lg:w-56 h-56 md:h-auto flex-shrink-0">
+                                    <div className="relative w-full md:w-48 lg:w-56 h-56 md:h-auto shrink-0">
                                         <Image
                                             src={member.image}
                                             alt={member.name}
@@ -133,7 +133,7 @@ export default function BoardPage() {
                                         />
                                         {/* Designation badge on image */}
                                         <div className="absolute bottom-3 left-3 md:bottom-auto md:top-3 md:left-3">
-                                            <span className="inline-block bg-gradient-to-r from-green-600 to-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                                            <span className="inline-block bg-linear-to-r from-green-600 to-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                                                 {member.designation}
                                             </span>
                                         </div>
@@ -157,7 +157,7 @@ export default function BoardPage() {
                                                 href={`tel:${member.mobile.replace(/[\s-]/g, "")}`}
                                                 className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors duration-200"
                                             >
-                                                <PhoneIcon className="w-4 h-4 flex-shrink-0 text-green-600" />
+                                                <PhoneIcon className="w-4 h-4 shrink-0 text-green-600" />
                                                 <span className="text-sm">{member.mobile}</span>
                                             </a>
 
@@ -166,12 +166,12 @@ export default function BoardPage() {
                                                 href={`mailto:${member.email}`}
                                                 className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors duration-200"
                                             >
-                                                <EnvelopeIcon className="w-4 h-4 flex-shrink-0 text-green-600" />
+                                                <EnvelopeIcon className="w-4 h-4 shrink-0 text-green-600" />
                                                 <span className="text-sm break-all">{member.email}</span>
                                             </a>
                                             {/* Profession */}
                                             <div className="flex items-start gap-2 text-gray-600">
-                                                <BriefcaseIcon className="w-4 h-4 flex-shrink-0 text-green-600 mt-0.5" />
+                                                <BriefcaseIcon className="w-4 h-4 shrink-0 text-green-600 mt-0.5" />
                                                 <span className="text-sm">{member.profession}</span>
                                             </div>
                                         </div>

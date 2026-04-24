@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 export default function RefundPolicyPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* Hero */}
-            <div className="relative bg-gradient-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-24 overflow-hidden">
+            <div className="relative bg-linear-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-24 overflow-hidden">
                 <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3" />
                 <div className="container-custom relative z-10">
@@ -33,7 +33,7 @@ export default function RefundPolicyPage() {
                         {/* 1 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১</span>
                                 ভূমিকা
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -44,7 +44,7 @@ export default function RefundPolicyPage() {
                         {/* 2 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">২</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">২</span>
                                 দান/অনুদানের প্রকৃতি
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -62,7 +62,7 @@ export default function RefundPolicyPage() {
                         {/* 3 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৩</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৩</span>
                                 ফেরতযোগ্য ক্ষেত্রসমূহ
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -79,7 +79,7 @@ export default function RefundPolicyPage() {
                         {/* 4 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৪</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৪</span>
                                 ফেরত অযোগ্য ক্ষেত্রসমূহ
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -95,7 +95,7 @@ export default function RefundPolicyPage() {
                         {/* 5 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৫</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৫</span>
                                 ফেরত আবেদন প্রক্রিয়া
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -124,7 +124,7 @@ export default function RefundPolicyPage() {
                         {/* 6 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৬</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৬</span>
                                 ফেরতের সময়সীমা
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -135,7 +135,7 @@ export default function RefundPolicyPage() {
                         {/* 7 */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৭</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৭</span>
                                 বিশেষ বিবেচনা
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -144,9 +144,9 @@ export default function RefundPolicyPage() {
                         </div>
 
                         {/* Contact */}
-                        <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-green-200">
+                        <div className="bg-linear-to-r from-green-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-green-200">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৮</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৮</span>
                                 যোগাযোগ
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">

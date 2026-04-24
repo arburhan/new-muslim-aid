@@ -207,7 +207,7 @@ export default function NavigationCards() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
+    <section className="py-24 bg-linear-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-islamic-primary/5 rounded-full blur-3xl"></div>
@@ -242,7 +242,7 @@ export default function NavigationCards() {
               <Link
                 key={card.id}
                 href={card.href}
-                className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${card.featured ? 'lg:col-span-1 md:col-span-1' : ''
+                className={`group relative bg-linear-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${card.featured ? 'lg:col-span-1 md:col-span-1' : ''
                   }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -253,7 +253,7 @@ export default function NavigationCards() {
 
                 {/* Featured badge */}
                 {card.featured && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-islamic-accent to-yellow-400 text-islamic-dark text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  <div className="absolute top-4 right-4 bg-linear-to-r from-islamic-accent to-yellow-400 text-islamic-dark text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     {locale === 'bn' ? 'জনপ্রিয়' : 'Popular'}
                   </div>
                 )}
@@ -261,7 +261,7 @@ export default function NavigationCards() {
                 <div className="relative z-10 h-full flex flex-col">
                   {/* Icon - Fixed Colors */}
                   <div className="mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${card.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                    <div className={`w-16 h-16 bg-linear-to-br ${card.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export default function NavigationCards() {
                 </div>
 
                 {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-white/0 via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </Link>
             );
           })}
