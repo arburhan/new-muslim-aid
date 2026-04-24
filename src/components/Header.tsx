@@ -47,7 +47,7 @@ export default function Header() {
     { name: t('howToConvert'), href: `/${locale}/under-development` },
     { name: t('bibaho'), href: `/${locale}/under-development` },
     { name: t('shelter'), href: `/${locale}/under-development` },
-    { name: t('deenShikkha'), href: `/${locale}/under-development` },
+    { name: t('deenShikkha'), href: `/${locale}/deeni-shikkha` },
     { name: t('donation'), href: `/${locale}/donation` },
   ];
 

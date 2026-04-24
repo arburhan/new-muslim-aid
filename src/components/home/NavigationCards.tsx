@@ -196,7 +196,7 @@ export default function NavigationCards() {
       id: 'deenShikkha',
       title: t('cards.deenShikkha.title'),
       description: t('cards.deenShikkha.description'),
-      href: `/${locale}/under-development`,
+      href: `/${locale}/deeni-shikkha`,
       icon: BookOpenIcon,
       gradient: 'from-indigo-500 to-blue-500',
       bgGradient: 'from-indigo-50 to-blue-50',
