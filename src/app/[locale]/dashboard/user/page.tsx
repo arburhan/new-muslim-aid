@@ -118,7 +118,7 @@ export default function DashboardPage() {
     new Date(dateStr).toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+    <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-emerald-50">
 
       <div className="max-w-5xl mx-auto px-4 py-8 space-y-8">
 
@@ -160,7 +160,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Referral Link Card */}
-        <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl p-6 text-white shadow-xl">
+        <div className="bg-linear-to-r from-green-600 to-emerald-600 rounded-3xl p-6 text-white shadow-xl">
           <div className="flex items-center gap-3 mb-4">
             <LinkIcon className="w-6 h-6" />
             <h2 className="text-lg font-bold">আমার সাদকায়ে জারিয়া লিঙ্ক 🌱</h2>
