@@ -3,12 +3,15 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { useSession, signOut } from 'next-auth/react';
 import {
   Bars3Icon,
   XMarkIcon,
   PhoneIcon,
   UserPlusIcon,
-  ChevronDownIcon
+  ChevronDownIcon,
+  UserCircleIcon,
+  ArrowRightOnRectangleIcon,
 } from '@heroicons/react/24/outline';
 
 import Image from 'next/image';
@@ -17,14 +20,21 @@ import logo from '../../public/logo.png';
 
 
 export default function Header() {
+  return <HeaderInner />;
+}
+
+function HeaderInner() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isAboutMobileOpen, setIsAboutMobileOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const aboutDropdownRef = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
   const t = useTranslations('navigation');
+  const { data: session } = useSession();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -35,6 +45,9 @@ export default function Header() {
       if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
         setIsAboutDropdownOpen(false);
       }
+      if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
+        setIsProfileOpen(false);
+      }
     }
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -44,7 +57,6 @@ export default function Header() {
   }, []);
 
   const mainNavigation = [
-    { name: t('howToConvert'), href: `/${locale}/under-development` },
     { name: t('bibaho'), href: `/${locale}/under-development` },
     { name: t('shelter'), href: `/${locale}/under-development` },
     { name: t('deenShikkha'), href: `/${locale}/deeni-shikkha` },
@@ -198,7 +210,48 @@ export default function Header() {
             </nav>
 
             {/* CTA Button & Mobile Menu - Fixed Colors */}
-            <div className="flex items-center ">
+            <div className="flex items-center gap-2">
+              {/* Auth Buttons */}
+              {session ? (
+                <div className="hidden md:block relative" ref={profileRef}>
+                  <button
+                    onClick={() => setIsProfileOpen(!isProfileOpen)}
+                    className="flex items-center gap-2 text-green-700 bg-green-50 hover:bg-green-100 border border-green-200 px-3 py-2 rounded-lg font-semibold text-sm transition-all"
+                  >
+                    <UserCircleIcon className="w-4 h-4" />
+                    <span className="max-w-[80px] truncate">{session.user?.name?.split(' ')[0]}</span>
+                    <ChevronDownIcon className={`w-3.5 h-3.5 transition-transform duration-200 ${isProfileOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {isProfileOpen && (
+                    <div className="absolute top-full right-0 mt-2 w-44 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
+                      <Link
+                        href={`/${locale}/dashboard/user`}
+                        className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:text-green-700 hover:bg-green-50 transition-colors"
+                        onClick={() => setIsProfileOpen(false)}
+                      >
+                        <UserCircleIcon className="w-4 h-4" />
+                        ড্যাশবোর্ড
+                      </Link>
+                      <button
+                        onClick={() => { setIsProfileOpen(false); signOut({ callbackUrl: `/${locale}` }); }}
+                        className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-red-500 hover:text-red-700 hover:bg-red-50 transition-colors"
+                      >
+                        <ArrowRightOnRectangleIcon className="w-4 h-4" />
+                        লগআউট
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  href={`/${locale}/auth/login`}
+                  className="hidden md:flex items-center gap-2 text-green-700 bg-green-50 hover:bg-green-100 border border-green-200 px-3 py-2 rounded-lg font-semibold text-sm transition-all"
+                >
+                  <UserCircleIcon className="w-4 h-4" />
+                  দাতার লগইন
+                </Link>
+              )}
+              {/* Donate CTA */}
               <a
                 href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
                 target="_blank"
@@ -266,7 +319,35 @@ export default function Header() {
                   </div>
                 )}
               </div>
-              <div className="pt-3 mt-3 border-t border-gray-100">
+              <div className="pt-3 mt-3 border-t border-gray-100 space-y-2">
+                {session ? (
+                  <>
+                    <Link
+                      href={`/${locale}/dashboard/user`}
+                      className="flex items-center gap-2 px-3 py-2 text-green-700 bg-green-50 hover:bg-green-100 rounded-lg font-semibold text-sm w-full"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <UserCircleIcon className="w-4 h-4" />
+                      ড্যাশবোর্ড
+                    </Link>
+                    <button
+                      onClick={() => { setIsMenuOpen(false); signOut({ callbackUrl: `/${locale}` }); }}
+                      className="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg text-sm font-medium w-full"
+                    >
+                      <ArrowRightOnRectangleIcon className="w-4 h-4" />
+                      লগআউট
+                    </button>
+                  </>
+                ) : (
+                  <Link
+                    href={`/${locale}/auth/login`}
+                    className="flex items-center gap-2 px-3 py-2 text-green-700 bg-green-50 hover:bg-green-100 border border-green-200 rounded-lg font-semibold text-sm w-full"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <UserCircleIcon className="w-4 h-4" />
+                    দাতার লগইন
+                  </Link>
+                )}
                 <a
                   href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
                   target="_blank"
@@ -285,4 +366,4 @@ export default function Header() {
       )}
     </header>
   );
-} 
+}

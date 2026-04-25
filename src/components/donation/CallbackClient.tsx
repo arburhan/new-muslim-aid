@@ -51,6 +51,14 @@ export default function CallbackClient() {
     const [showConfetti, setShowConfetti] = useState(false);
 
     const verifyTransaction = useCallback(async (invoiceNumber: string) => {
+        const cleanupPendingDonation = () => {
+            fetch("/api/paystation/cleanup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ invoice_number: invoiceNumber }),
+            }).catch(() => {});
+        };
+
         try {
             const response = await fetch("/api/paystation/verify", {
                 method: "POST",
@@ -68,9 +76,11 @@ export default function CallbackClient() {
                 setPageStatus("processing");
             } else {
                 setPageStatus("failed");
+                cleanupPendingDonation();
             }
         } catch {
             setPageStatus("error");
+            cleanupPendingDonation();
         }
     }, []);
 
@@ -85,6 +95,11 @@ export default function CallbackClient() {
 
         if (status === "Canceled") {
             setPageStatus("canceled");
+            fetch("/api/paystation/cleanup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ invoice_number: invoiceNumber }),
+            }).catch(() => {});
             return;
         }
 

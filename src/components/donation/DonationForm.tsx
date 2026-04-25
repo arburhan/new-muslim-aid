@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import {
     HeartIcon,
     UserIcon,
@@ -17,8 +18,10 @@ interface DonationFormProps {
 
 const PRESET_AMOUNTS = [500, 1000, 2000, 5000, 10000];
 
-export default function DonationForm({ pageType = "donation" }: DonationFormProps) {
+function DonationFormInner({ pageType = "donation" }: DonationFormProps) {
     const isZakat = pageType === "zakat";
+    const searchParams = useSearchParams();
+    const referralCode = searchParams.get('ref') || undefined;
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -82,6 +85,7 @@ export default function DonationForm({ pageType = "donation" }: DonationFormProp
                     email: email.trim().toLowerCase(),
                     amount: selectedAmount,
                     pageType,
+                    referralCode, // URL থেকে নেওয়া ref code
                 }),
             });
 
@@ -273,5 +277,13 @@ export default function DonationForm({ pageType = "donation" }: DonationFormProp
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function DonationForm({ pageType = "donation" }: DonationFormProps) {
+    return (
+        <Suspense fallback={<div className="h-64 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-green-200 border-t-green-600 rounded-full" /></div>}>
+            <DonationFormInner pageType={pageType} />
+        </Suspense>
     );
 }

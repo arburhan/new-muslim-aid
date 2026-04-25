@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
+import { SessionProvider } from 'next-auth/react';
+import { auth } from '@/auth';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
@@ -63,6 +65,7 @@ export default async function LocaleLayout({
 
   // Providing all messages to the client side is the easiest way to get started
   const messages = await getMessages();
+  const session = await auth();
 
   return (
     <html lang={locale} dir="ltr" className={locale === 'bn' ? 'font-bengali' : 'font-english'}>
@@ -77,21 +80,23 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-screen bg-gray-50">
         <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen flex flex-col">
-            {/* Main Header */}
-            <Header />
+          <SessionProvider session={session}>
+            <div className="min-h-screen flex flex-col">
+              {/* Main Header */}
+              <Header />
 
-            {/* Main Content */}
-            <main className="flex-1">
-              {children}
-            </main>
+              {/* Main Content */}
+              <main className="flex-1">
+                {children}
+              </main>
 
-            {/* Footer */}
-            <Footer />
+              {/* Footer */}
+              <Footer />
 
-            {/* Floating WhatsApp & Messenger */}
-            <FloatingButtons />
-          </div>
+              {/* Floating WhatsApp & Messenger */}
+              <FloatingButtons />
+            </div>
+          </SessionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

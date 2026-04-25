@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { submitDonationRecord } from '@/lib/google-sheets';
 import { sendDonationInvoice } from '@/lib/email';
+import connectDB from '@/lib/mongodb';
+import Donation from '@/models/Donation';
+import PendingDonation from '@/models/PendingDonation';
 
 export async function POST(request: NextRequest) {
     try {
@@ -73,17 +76,66 @@ export async function POST(request: NextRequest) {
 
         if (trxStatus === 'successful' || trxStatus === 'success') {
             // Payment verified as successful by Paystation
+
+            // PendingDonation থেকে donor info + referralCode বের করা
+            // (Paystation transaction-status API তে opt_b/opt_c/opt_a return হয় না)
+            let referralCode: string | undefined;
+            let pendingDonorName = '';
+            let pendingDonorEmail = '';
+            let pendingPageType: 'donation' | 'zakat' = 'donation';
+            try {
+                await connectDB();
+                const pending = await PendingDonation.findOne({
+                    invoiceNumber: data.invoice_number,
+                });
+                if (pending) {
+                    referralCode = pending.referralCode;
+                    pendingDonorName = pending.donorName || '';
+                    pendingDonorEmail = pending.donorEmail || '';
+                    pendingPageType = pending.pageType === 'zakat' ? 'zakat' : 'donation';
+                    // ব্যবহার শেষ — delete করা
+                    await PendingDonation.deleteOne({ _id: pending._id });
+                }
+            } catch (pendingError) {
+                console.error('⚠️ Failed to lookup pending donation:', pendingError);
+            }
+
             const donationDetails = {
-                donorName: data.opt_b || '',
-                donorEmail: data.opt_c || '',
-                donorPhone: data.payer_mobile_no || '',
+                donorName: pendingDonorName || data.opt_b || '',
+                donorEmail: pendingDonorEmail || data.opt_c || '',
+                donorPhone: data.payer_mobile_no || data.cust_phone || '',
                 amount: data.payment_amount || '0',
                 transactionId: data.trx_id || '',
                 paymentMethod: data.payment_method || '',
                 status: 'Successful',
-                type: 'donation', // default
+                type: pendingPageType,
+                referralCode: referralCode,
                 date: data.order_date_time || new Date().toISOString(),
             };
+
+            // ✅ MongoDB তে Donation সেভ করা (সবচেয়ে গুরুত্বপূর্ণ)
+            try {
+                await connectDB();
+                // Duplicate transaction check
+                const existing = await Donation.findOne({ transactionId: donationDetails.transactionId });
+                if (!existing) {
+                    await Donation.create({
+                        donorName: donationDetails.donorName,
+                        donorEmail: donationDetails.donorEmail,
+                        donorPhone: donationDetails.donorPhone,
+                        amount: parseFloat(donationDetails.amount),
+                        transactionId: donationDetails.transactionId,
+                        paymentMethod: donationDetails.paymentMethod,
+                        status: donationDetails.status,
+                        type: donationDetails.type,
+                        referralCode: donationDetails.referralCode,
+                        date: new Date(donationDetails.date),
+                    });
+                }
+            } catch (mongoError) {
+                console.error('⚠️ Failed to save donation to MongoDB:', mongoError);
+                // Don't fail verification because of DB error
+            }
 
             // Try to log to Google Sheets (non-blocking)
             try {

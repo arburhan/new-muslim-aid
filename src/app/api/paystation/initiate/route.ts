@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
+import connectDB from '@/lib/mongodb';
+import PendingDonation from '@/models/PendingDonation';
 
 // Input validation helpers
 function validatePhone(phone: string): boolean {
@@ -49,7 +51,7 @@ export async function POST(request: NextRequest) {
 
         // Parse request body
         const body = await request.json();
-        const { name, phone, email, amount, pageType } = body;
+        const { name, phone, email, amount, pageType, referralCode } = body;
 
         // ========= INPUT VALIDATION =========
 
@@ -138,6 +140,9 @@ export async function POST(request: NextRequest) {
         formData.append('opt_a', validPageType); // donation or zakat
         formData.append('opt_b', sanitizedName); // donor name for verification
         formData.append('opt_c', email.trim().toLowerCase()); // donor email for invoice
+        if (referralCode && typeof referralCode === 'string') {
+            formData.append('opt_d', referralCode.trim()); // সাদকায়ে জারিয়া referral code
+        }
 
         // Call Paystation API
         const response = await fetch(`${baseUrl}/initiate-payment`, {
@@ -148,6 +153,24 @@ export async function POST(request: NextRequest) {
         const result = await response.json();
 
         if (result.status_code === '200' && result.status === 'success' && result.payment_url) {
+            // সবসময় PendingDonation এ সেভ করো — donor info + referralCode
+            // (Paystation transaction-status এ opt_b/opt_c/opt_a আসে না)
+            try {
+                await connectDB();
+                await PendingDonation.create({
+                    invoiceNumber: result.invoice_number || invoiceNumber,
+                    donorName: sanitizedName,
+                    donorEmail: email.trim().toLowerCase(),
+                    pageType: validPageType,
+                    referralCode: (referralCode && typeof referralCode === 'string')
+                        ? referralCode.trim()
+                        : undefined,
+                });
+            } catch (pendingError) {
+                console.error('⚠️ Failed to save pending donation:', pendingError);
+                // Don't fail the payment because of this
+            }
+
             return NextResponse.json({
                 success: true,
                 payment_url: result.payment_url,
