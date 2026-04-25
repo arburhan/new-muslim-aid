@@ -7,9 +7,6 @@ import {
   EnvelopeIcon,
   MapPinIcon,
   ClockIcon,
-  DocumentTextIcon,
-  BuildingOfficeIcon,
-  BriefcaseIcon
 } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 
@@ -22,12 +19,6 @@ const FacebookIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   </svg>
 );
 
-// Shield / verified icon
-const ShieldCheckIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-  </svg>
-);
 
 export default function Footer() {
   const locale = useLocale();
@@ -47,30 +38,7 @@ export default function Footer() {
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
-  const tradeLicenseItems = [
-    {
-      icon: <DocumentTextIcon className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />,
-      label: locale === 'bn' ? 'ট্রেড লাইসেন্স নম্বর' : 'Trade License No.',
-      value: '69832030549',
-      highlight: true,
-    },
-    {
-      icon: <BriefcaseIcon className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />,
-      label: locale === 'bn' ? 'সেবার ধরণ' : 'Type of Service',
-      value: locale === 'bn'
-        ? 'পরামর্শ, গবেষণা, প্রশিক্ষণ কেন্দ্র'
-        : 'Consultancy, Research & Training Center',
-      highlight: false,
-    },
-    {
-      icon: <BuildingOfficeIcon className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />,
-      label: locale === 'bn' ? 'নিবন্ধিত ঠিকানা' : 'Registered Address',
-      value: locale === 'bn'
-        ? 'পুঠিয়া, ১ নং ওয়ার্ড, পুঠিয়া পৌরসভা, রাজশাহী'
-        : 'Puthia, Ward No. 1, Puthia Municipality, Rajshahi',
-      highlight: false,
-    },
-  ];
+
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -221,7 +189,6 @@ export default function Footer() {
           </div>
         </div>
 
-<<<<<<< HEAD
         {/* সরকারি নিবন্ধন তথ্য - Government Registration Info */}
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="mb-8">
@@ -317,58 +284,6 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-700 pt-8">
-=======
-        {/* ─── Trade License Section ─── */}
-        <div className="mt-12 rounded-2xl border border-green-700/40 bg-green-900/10 p-6">
-          {/* Header */}
-          <div className="flex items-center gap-2 mb-5">
-            <ShieldCheckIcon className="w-5 h-5 text-green-400" />
-            <h5 className="text-green-300 font-bold text-base tracking-wide uppercase">
-              {locale === 'bn'
-                ? 'সরকারি নিবন্ধন তথ্য'
-                : 'Government Registration Info'}
-            </h5>
-          </div>
-
-          {/* Info grid — responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {tradeLicenseItems.map((item, idx) => (
-              <div
-                key={idx}
-                className={`flex gap-3 p-4 rounded-xl border ${
-                  item.highlight
-                    ? 'bg-green-800/20 border-green-600/50'
-                    : 'bg-gray-800/40 border-gray-700/50'
-                }`}
-              >
-                <div className="mt-0.5">{item.icon}</div>
-                <div>
-                  <p className="text-xs text-gray-400 font-medium mb-1 uppercase tracking-wider">
-                    {item.label}
-                  </p>
-                  <p
-                    className={`font-semibold text-sm leading-snug ${
-                      item.highlight ? 'text-green-300 text-base' : 'text-gray-200'
-                    }`}
-                  >
-                    {item.value}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Sub-note */}
-          <p className="mt-4 text-xs text-gray-500 leading-relaxed">
-            {locale === 'bn'
-              ? '* উপর্যুক্ত তথ্য গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ট্রেড লাইসেন্স অনুযায়ী প্রদত্ত।'
-              : '* The above information is provided in accordance with the Trade License issued by the Government of the People\'s Republic of Bangladesh.'}
-          </p>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-10 pt-8">
->>>>>>> fd9d6935e8959a3657c72f5fa5b2a9d3d4510b8d
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div>
               <div className="text-gray-300">
