@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { blobImages } from '@/lib/blob-images';
 
 export default function MadrasatudDawah() {
   const locale = useLocale();
@@ -22,7 +23,7 @@ export default function MadrasatudDawah() {
               <div className="flex-shrink-0">
                 <div className="w-36 h-36 md:w-44 md:h-44 relative bg-linear-to-br from-indigo-50 to-blue-50 rounded-2xl p-3 shadow-lg border border-indigo-100">
                   <Image
-                    src="/images/mtdawah/logo.png"
+                    src={blobImages.mtdawah.logo}
                     alt="মাদরাসাতুদ দাওয়াহ লোগো"
                     fill
                     className="object-contain rounded-xl"

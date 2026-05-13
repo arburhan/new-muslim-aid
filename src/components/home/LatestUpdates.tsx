@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { blobImages } from '@/lib/blob-images';
 
 export default function LatestUpdates() {
   const t = useTranslations('home');
@@ -21,7 +22,7 @@ export default function LatestUpdates() {
       // date: '2024-06-10',
       // readTime: '5 মিনিট',
       category: locale === 'bn' ? 'প্রশিক্ষণ' : 'Training',
-      image: '/images/training-program.jpg'
+      image: blobImages.updates.trainingProgram
     },
     {
       id: 2,
@@ -34,7 +35,7 @@ export default function LatestUpdates() {
       // date: '2024-06-08',
       // readTime: '3 মিনিট',
       category: locale === 'bn' ? 'ইভেন্ট' : 'Event',
-      image: '/images/ramadan-support.jpg'
+      image: blobImages.updates.ramadanSupport
     },
     {
       id: 3,
@@ -47,7 +48,7 @@ export default function LatestUpdates() {
       // date: '2024-06-05',
       // readTime: '4 মিনিট',
       category: locale === 'bn' ? 'নিয়োগ' : 'Recruitment',
-      image: '/images/volunteer-recruitment.jpg'
+      image: blobImages.updates.volunteerRecruitment
     }
   ];
 

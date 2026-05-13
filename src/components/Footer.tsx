@@ -11,6 +11,7 @@ import {
 import Image from 'next/image';
 
 import logo from '../../public/logo.png';
+import { blobImages } from '@/lib/blob-images';
 
 // Facebook Icon Component
 const FacebookIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
@@ -272,7 +273,7 @@ export default function Footer() {
             </p>
             <div className="bg-white rounded-xl p-3 inline-block shadow-sm">
               <Image
-                src="/images/paystation/image.png"
+                src={blobImages.paystation.image}
                 alt="Accepted Payment Methods - bKash, Nagad, Rocket, Visa, Mastercard, and more"
                 width={1000}
                 height={80}

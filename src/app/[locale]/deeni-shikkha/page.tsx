@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import type { Metadata } from 'next';
+import { blobImages } from '@/lib/blob-images';
 
 export const metadata: Metadata = {
   title: 'দ্বীনি শিক্ষা - মাদরাসাতুদ দাওয়াহ | নিউমুসলিম এইড ফাউন্ডেশন',
@@ -36,7 +37,7 @@ export default function DeeniShikkhaPage() {
         <div className="container-custom relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
             <div className="w-32 h-32 md:w-40 md:h-40 relative flex-shrink-0 bg-white rounded-2xl p-2 shadow-2xl">
-              <Image src="/images/mtdawah/logo.png" alt="মাদরাসাতুদ দাওয়াহ লোগো" fill className="object-contain rounded-xl" />
+              <Image src={blobImages.mtdawah.logo} alt="মাদরাসাতুদ দাওয়াহ লোগো" fill className="object-contain rounded-xl" />
             </div>
             <div className="text-center md:text-left">
               <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 mb-4">
@@ -69,7 +70,7 @@ export default function DeeniShikkhaPage() {
       <section className="pb-10">
         <div className="container-custom max-w-5xl">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video">
-            <Image src="/images/mtdawah/others/buildings.png" alt="মাদরাসা ভবন" fill className="object-cover" />
+            <Image src={blobImages.mtdawah.buildings} alt="মাদরাসা ভবন" fill className="object-cover" />
             <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
             <div className="absolute bottom-6 left-6 text-white">
               <p className="text-lg font-bold">মাদরাসাতুদ দাওয়াহ ক্যাম্পাস</p>
@@ -144,7 +145,7 @@ export default function DeeniShikkhaPage() {
               ))}
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] max-h-[500px]">
-              <Image src="/images/mtdawah/others/admission1.png" alt="ভর্তি তথ্য" fill className="object-cover" />
+              <Image src={blobImages.mtdawah.admission1} alt="ভর্তি তথ্য" fill className="object-cover" />
             </div>
           </div>
         </div>

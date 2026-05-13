@@ -3,16 +3,7 @@
 import Image from "next/image";
 import { BriefcaseIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
-// Board member images
-import abuSaidImg from "../../../../../public/images/boardMember/abu said.jpeg";
-import mostafijImg from "../../../../../public/images/boardMember/mostafij hujur.jpeg";
-import sohidImg from "../../../../../public/images/boardMember/sohid vi pic.jpeg";
-import johirImg from "../../../../../public/images/boardMember/johir hujur.jpeg";
-import faysalImg from "../../../../../public/images/boardMember/faysal hujur.jpeg";
-import omarImg from "../../../../../public/images/boardMember/omar vi pic.jpeg";
-import sufianImg from "../../../../../public/images/boardMember/sufian hujur pic.jpeg";
-import abdullahSaidImg from "../../../../../public/images/boardMember/abdullah said hujur.jpeg";
-import defaultImg from "../../../../../public/images/commonHuman.png";
+import { blobImages } from "@/lib/blob-images";
 
 const boardMembers = [
     {
@@ -21,7 +12,7 @@ const boardMembers = [
         profession: "খতিব, বাংলাদেশ জার্মান টেকনিক্যাল ট্রেনিং সেন্টার, মিরপুর-২, ঢাকা",
         mobile: "০১৮৬০-৯১৪৯৬১",
         email: "shamimnazmuddin@gmail.com",
-        image: defaultImg,
+        image: blobImages.boardMembers.commonHuman,
     },
     {
         name: "মোঃ মোস্তাফিজুর রহমান",
@@ -29,7 +20,7 @@ const boardMembers = [
         profession: "ব্যবসায়ী",
         mobile: "০১৭৫৪৬৬৬৬৬০",
         email: "mustafizur.preach@gmail.com",
-        image: mostafijImg,
+        image: blobImages.boardMembers.mostafij,
     },
     {
         name: "মোঃ শহিদুল ইসলাম",
@@ -37,7 +28,7 @@ const boardMembers = [
         profession: "স্থপতি",
         mobile: "০১৭১৭-৪৩৭২০৪",
         email: "sohidul.arch@gmail.com",
-        image: sohidImg,
+        image: blobImages.boardMembers.sohid,
     },
     {
         name: "জহীরুল ইসলাম",
@@ -45,7 +36,7 @@ const boardMembers = [
         profession: "শিক্ষক",
         mobile: "০১৫৫২-৩৫৯৩৩৮",
         email: "muftizahir24@gmail.com",
-        image: johirImg,
+        image: blobImages.boardMembers.johir,
     },
     {
         name: "আবদুল্লাহ আল-আমিন",
@@ -53,7 +44,7 @@ const boardMembers = [
         profession: "জুনিয়র সহকারি ব্যবস্থাপক (প্রশাসন), রূপনগর বিঃ ও বিঃ বিভাগ, ডেসকো",
         mobile: "০১৫১৭-৮৪৪৯৭৯",
         email: "abdullah.du.rcc@gmail.com",
-        image: defaultImg,
+        image: blobImages.boardMembers.commonHuman,
     },
     {
         name: "আবু সাঈদ",
@@ -61,7 +52,7 @@ const boardMembers = [
         profession: "হোমিও চিকিৎসক, বারাকাহ হোমিও সেন্টার, মিরপুর-১০, ঢাকা",
         mobile: "০১৮৪৯-৫৩৮৭২০",
         email: "abusayedabdullah16@gmail.com",
-        image: abuSaidImg,
+        image: blobImages.boardMembers.abuSaid,
     },
     {
         name: "ফয়সাল আহমাদ",
@@ -69,7 +60,7 @@ const boardMembers = [
         profession: "বেসরকারী চাকুরিজীবী",
         mobile: "01829-904719",
         email: "faysalahmad7799@gmail.com",
-        image: faysalImg,
+        image: blobImages.boardMembers.faysal,
     },
     {
         name: "মোঃ ওমর ফারুক",
@@ -77,7 +68,7 @@ const boardMembers = [
         profession: "সহকারি অধ্যাপক ও বিভাগীয় প্রধান (এমবিএ প্রোগ্রাম), ড্যাফোডিল ইনস্টিটিউট অফ আইটি, ঢাকা",
         mobile: "01683-689117",
         email: "head.mba@diit.info",
-        image: omarImg,
+        image: blobImages.boardMembers.omar,
     },
     {
         name: "মোঃ ছুফিয়ান",
@@ -85,7 +76,7 @@ const boardMembers = [
         profession: "ইমাম, রোয়াংছড়ি থানা জামে মসজিদ, রোয়াংছড়ি সদর, বান্দরবান",
         mobile: "01628177625",
         email: "saurysufian@gmail.com",
-        image: sufianImg,
+        image: blobImages.boardMembers.sufian,
     },
     {
         name: "মোঃ আব্দুল্লাহ সাইদ",
@@ -93,7 +84,7 @@ const boardMembers = [
         profession: "শিক্ষক, দারুল উলুম মাদ্রাসা, মালোপাড়া, রাজশাহী",
         mobile: "01791-111455",
         email: "abdullahsayed890@gmail.com",
-        image: abdullahSaidImg,
+        image: blobImages.boardMembers.abdullahSaid,
     },
 ];
 
