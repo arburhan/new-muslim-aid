@@ -5,7 +5,8 @@ import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  secret: process.env.NEXTAUTH_SECRET,
+  // NextAuth v5 uses AUTH_SECRET; fall back to NEXTAUTH_SECRET for compatibility
+  secret: process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET,
   session: {
     strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -13,6 +14,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
     signIn: '/bn/auth/login',
     error: '/bn/auth/login',
+  },
+  cookies: {
+    sessionToken: {
+      name: `naf.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: process.env.NODE_ENV === 'production',
+      },
+    },
   },
   providers: [
     CredentialsProvider({

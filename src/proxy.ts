@@ -17,7 +17,12 @@ export default async function middleware(request: NextRequest) {
 
   if (match) {
     const locale = match[1];
-    const session = await auth();
+    let session = null;
+    try {
+      session = await auth();
+    } catch {
+      // JWTSessionError — stale cookie from old AUTH_SECRET; treat as unauthenticated
+    }
 
     if (!session) {
       const loginUrl = new URL(`/${locale}/auth/login`, request.url);

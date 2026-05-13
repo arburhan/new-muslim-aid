@@ -65,7 +65,16 @@ export default async function LocaleLayout({
 
   // Providing all messages to the client side is the easiest way to get started
   const messages = await getMessages();
-  const session = await auth();
+
+  // Gracefully handle JWT errors (e.g., stale cookie from a different AUTH_SECRET).
+  // On error, fall back to null (unauthenticated) so the page doesn't crash.
+  let session = null;
+  try {
+    session = await auth();
+  } catch (error) {
+    // JWTSessionError: "no matching decryption secret" — old cookie, just ignore it.
+    console.warn('[auth] Session error (ignoring):', error);
+  }
 
   return (
     <html lang={locale} dir="ltr" className={locale === 'bn' ? 'font-bengali' : 'font-english'}>

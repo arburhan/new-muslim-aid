@@ -55,9 +55,8 @@ const UserSchema = new Schema<IUser>(
   }
 );
 
-// Index for faster email queries
-UserSchema.index({ email: 1 });
-UserSchema.index({ referralCode: 1 });
+// Note: explicit index() calls removed — `unique: true` on the schema fields
+// already creates unique indexes automatically.
 
 const User: Model<IUser> =
   mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
