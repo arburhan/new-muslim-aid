@@ -1,5 +1,6 @@
 import Hero from '@/components/home/Hero';
 import NavigationCards from '@/components/home/NavigationCards';
+import MadrasatudDawah from '@/components/home/MadrasatudDawah';
 import StatsSection from '@/components/home/StatsSection';
 import LatestUpdates from '@/components/home/LatestUpdates';
 // import Testimonials from '@/components/home/Testimonials';
@@ -39,6 +40,8 @@ export default async function HomePage({ params }: Props) {
       </div>
       {/* Navigation Cards */}
       <NavigationCards />
+      {/* Madrasatud Dawah */}
+      <MadrasatudDawah />
       {/* Bank Details */}
       <BankDetails />
 

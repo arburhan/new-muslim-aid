@@ -100,9 +100,9 @@ const futurePlans = [
 export default function MissionPage() {
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* ========== Hero ========== */}
-            {/*   <div className="bg-gradient-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-20">
+            {/*   <div className="bg-linear-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-20">
                 <div className="container-custom text-center">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
                         মিশন ও ভিশন
@@ -114,7 +114,7 @@ export default function MissionPage() {
             </div> */}
 
             {/* ========== লক্ষ্য ও উদ্দেশ্য ========== */}
-            <section className="py-16 md:py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white">
+            <section className="py-16 md:py-20 bg-linear-to-r from-green-600 to-teal-600 text-white">
                 <div className="container-custom max-w-5xl text-center">
                     <LightBulbIcon className="w-16 h-16 mx-auto mb-6 opacity-90" />
                     <h2 className="text-3xl md:text-4xl font-bold mb-8">
@@ -149,7 +149,7 @@ export default function MissionPage() {
                                     className="group bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 transform hover:-translate-y-1"
                                 >
                                     <div className="flex items-start gap-4">
-                                        <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <div className="shrink-0 w-12 h-12 bg-linear-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                             <IconComponent className="w-6 h-6 text-white" />
                                         </div>
                                         <div>
@@ -169,7 +169,7 @@ export default function MissionPage() {
             </section>
 
             {/* ========== ভবিষ্যত পরিকল্পনা ========== */}
-            <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-green-50">
+            <section className="py-16 md:py-20 bg-linear-to-br from-gray-50 to-green-50">
                 <div className="container-custom max-w-5xl">
                     <div className="text-center mb-14">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -189,7 +189,7 @@ export default function MissionPage() {
                                     className="group bg-white rounded-2xl p-6 md:p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-teal-200 transition-all duration-300"
                                 >
                                     <div className="flex items-start gap-5">
-                                        <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <div className="shrink-0 w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                             <IconComponent className="w-7 h-7 text-white" />
                                         </div>
                                         <div className="flex-1">

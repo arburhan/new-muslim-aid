@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* ========== Hero Section ========== */}
-            <div className="relative bg-gradient-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-24 overflow-hidden">
+            <div className="relative bg-linear-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-24 overflow-hidden">
                 <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3" />
 
@@ -39,7 +39,7 @@ export default function TermsPage() {
                         {/* 1. ভূমিকা */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১</span>
                                 ভূমিকা
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -53,7 +53,7 @@ export default function TermsPage() {
                         {/* 2. সেবার বিবরণ */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">২</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">২</span>
                                 সেবার বিবরণ
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -72,7 +72,7 @@ export default function TermsPage() {
                         {/* 3. ব্যবহারকারীর দায়িত্ব */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৩</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৩</span>
                                 ব্যবহারকারীর দায়িত্ব
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -90,7 +90,7 @@ export default function TermsPage() {
                         {/* 4. দান ও অনুদান */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৪</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৪</span>
                                 দান ও অনুদান
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -108,7 +108,7 @@ export default function TermsPage() {
                         {/* 5. বৌদ্ধিক সম্পত্তি */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৫</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৫</span>
                                 বৌদ্ধিক সম্পত্তি
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -122,7 +122,7 @@ export default function TermsPage() {
                         {/* 6. দায়বদ্ধতার সীমাবদ্ধতা */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৬</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৬</span>
                                 দায়বদ্ধতার সীমাবদ্ধতা
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -135,7 +135,7 @@ export default function TermsPage() {
                         {/* 7. তৃতীয় পক্ষের সেবা */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৭</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৭</span>
                                 তৃতীয় পক্ষের সেবা
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -148,7 +148,7 @@ export default function TermsPage() {
                         {/* 8. শর্তাবলী পরিবর্তন */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৮</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৮</span>
                                 শর্তাবলী পরিবর্তন
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -161,7 +161,7 @@ export default function TermsPage() {
                         {/* 9. প্রযোজ্য আইন */}
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৯</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">৯</span>
                                 প্রযোজ্য আইন
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed">
@@ -171,9 +171,9 @@ export default function TermsPage() {
                         </div>
 
                         {/* 10. যোগাযোগ */}
-                        <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-green-200">
+                        <div className="bg-linear-to-r from-green-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-green-200">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১০</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১০</span>
                                 যোগাযোগ
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">

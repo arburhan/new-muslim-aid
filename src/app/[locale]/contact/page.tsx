@@ -96,9 +96,9 @@ export default function ContactPage() {
   // ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-green-600 to-blue-700 text-white py-20">
+      <div className="bg-linear-to-r from-green-600 to-blue-700 text-white py-20">
         <div className="container-custom">
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-black mb-6">
@@ -124,7 +124,7 @@ export default function ContactPage() {
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -171,7 +171,7 @@ export default function ContactPage() {
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -226,7 +226,7 @@ export default function ContactPage() {
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -245,7 +245,7 @@ export default function ContactPage() {
         {/*
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-            <div className="bg-gradient-to-r from-green-600 to-blue-700 text-white p-8">
+            <div className="bg-linear-to-r from-green-600 to-blue-700 text-white p-8">
               <h2 className="text-3xl font-bold mb-2">
                 {locale === 'bn' ? 'আমাদের সাথে যোগাযোগ করুন' : 'Get in Touch'}
               </h2>
@@ -333,7 +333,7 @@ export default function ContactPage() {
                 <div className="text-center">
                   <button 
                     type="submit"
-                    className="bg-gradient-to-r from-green-600 to-blue-700 text-white px-12 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                    className="bg-linear-to-r from-green-600 to-blue-700 text-white px-12 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
                   >
                     {locale === 'bn' ? 'বার্তা পাঠান' : 'Send Message'}
                   </button>
@@ -346,7 +346,7 @@ export default function ContactPage() {
 
         {/* Emergency Contact */}
         <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-red-600 to-red-500 text-white rounded-3xl p-12 max-w-4xl mx-auto">
+          <div className="bg-linear-to-r from-red-600 to-red-500 text-white rounded-3xl p-12 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">
               {locale === "bn"
                 ? "জরুরি সহায়তা প্রয়োজন?"

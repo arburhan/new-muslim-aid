@@ -12,21 +12,19 @@ import {
   GlobeAltIcon,
   HeartIcon
 } from '@heroicons/react/24/solid';
-import Image from 'next/image';
 
-import logo from '../../../public/logo.png';
 
 export default function Hero() {
   const locale = useLocale();
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-emerald-50/20 flex items-center overflow-hidden">
+    <section className="relative min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-emerald-50/20 flex items-center overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-islamic-primary/10 to-islamic-secondary/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-br from-islamic-accent/15 to-islamic-light/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-islamic-secondary/8 to-islamic-primary/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-linear-to-br from-islamic-primary/10 to-islamic-secondary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-linear-to-br from-islamic-accent/15 to-islamic-light/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-linear-to-br from-islamic-secondary/8 to-islamic-primary/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
         {/* Geometric patterns */}
         <div className="absolute top-20 left-20 w-4 h-4 bg-islamic-accent/30 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
@@ -98,7 +96,7 @@ export default function Hero() {
                 className="group relative text-white px-5 py-5 rounded-2xl font-bold text-lg transition-all duration-500 flex items-center justify-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 overflow-hidden"
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 <span className="relative z-10 text-white">{locale === 'bn' ? 'ইসলাম গ্রহণ করতে করণীয়' : 'Guidelines for accepting Islam'}</span>
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
@@ -149,8 +147,8 @@ export default function Hero() {
             {/* Main Card */}
             <div className="bg-white/98 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-white/20 relative overflow-hidden">
               {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-islamic-accent/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-islamic-primary/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-islamic-accent/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-linear-to-tr from-islamic-primary/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
 
               {/* Header - Fixed Colors */}
               <div className="text-center mb-10 relative z-10">
@@ -186,7 +184,7 @@ export default function Hero() {
                 {/* Donation Button */}
                 <Link
                   href={`/${locale}/donation`}
-                  className="group flex md:inline-flex bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white w-full md:w-auto md:px-28 py-5 rounded-2xl font-bold text-2xl transition-all duration-300 items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1 mb-6"
+                  className="group flex md:inline-flex bg-linear-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white w-full md:w-auto md:px-28 py-5 rounded-2xl font-bold text-2xl transition-all duration-300 items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1 mb-6"
                 >
                   <HeartIcon className="w-7 h-7 mr-4 text-white group-hover:scale-110 transition-transform duration-300" />
                   <span>{locale === 'bn' ? 'দান করুন' : 'Donate Now'}</span>
@@ -206,10 +204,10 @@ export default function Hero() {
               </div>
 
               {/* Enhanced Emergency Contact */}
-              <div className="bg-gradient-to-r from-red-50 to-red-100/50 border-2 border-red-200/50 rounded-2xl p-8 mb-8 relative overflow-hidden">
+              <div className="bg-linear-to-r from-red-50 to-red-100/50 border-2 border-red-200/50 rounded-2xl p-8 mb-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-red-200/30 rounded-full -translate-y-10 translate-x-10"></div>
                 <div className="flex items-center relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                  <div className="w-16 h-16 bg-linear-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
                     <PhoneIcon className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -234,8 +232,8 @@ export default function Hero() {
             </div>
 
             {/* Enhanced Floating Elements */}
-            <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-islamic-accent to-yellow-400 rounded-3xl shadow-2xl animate-bounce"></div>
-            <div className="absolute -bottom-8 -left-8 w-12 h-12 bg-gradient-to-br from-islamic-light to-emerald-400 rounded-2xl shadow-xl animate-bounce" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute -top-8 -right-8 w-16 h-16 bg-linear-to-br from-islamic-accent to-yellow-400 rounded-3xl shadow-2xl animate-bounce"></div>
+            <div className="absolute -bottom-8 -left-8 w-12 h-12 bg-linear-to-br from-islamic-light to-emerald-400 rounded-2xl shadow-xl animate-bounce" style={{ animationDelay: '1s' }}></div>
             <div className="absolute top-1/2 -right-4 w-6 h-6 bg-islamic-primary rounded-xl shadow-lg animate-pulse"></div>
           </div>
         </div>
@@ -244,7 +242,7 @@ export default function Hero() {
         <div className="mt-20 text-center">
           <div className="inline-flex items-center space-x-4 bg-white/90 backdrop-blur-sm rounded-full px-4 md:px-8 py-4 shadow-xl">
             <GlobeAltIcon className="w-8 h-8 text-green-700" />
-            <span className="text-lg font-bold text-gray-800">
+            <span className="text-md md:text-lg font-bold text-gray-800">
               {locale === 'bn' ? 'বিশ্বব্যাপী মুসলিম সম্প্রদায়ের সাথে যুক্ত হোন' : 'Join the Global Muslim Community'}
             </span>
             <div className="flex space-x-1">

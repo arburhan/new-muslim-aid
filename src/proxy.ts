@@ -1,17 +1,41 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from 'next/server';
+import { auth } from '@/auth';
 
-export default createMiddleware({
-  // A list of all locales that are supported
+const intlMiddleware = createMiddleware({
   locales: ['bn'],
-
-  // Used when no locale matches
   defaultLocale: 'bn',
-
-  // Always use locale prefix
-  localePrefix: 'always'
+  localePrefix: 'always',
 });
+
+export default async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Protect dashboard routes (handles any locale and both /dashboard or /dashboard/user or /user/dashboard)
+  const dashboardRegex = /^\/([^/]+)\/(dashboard|user\/dashboard|dashboard\/user)/;
+  const match = pathname.match(dashboardRegex);
+
+  if (match) {
+    const locale = match[1];
+    let session = null;
+    try {
+      session = await auth();
+    } catch {
+      // JWTSessionError — stale cookie from old AUTH_SECRET; treat as unauthenticated
+    }
+
+    if (!session) {
+      const loginUrl = new URL(`/${locale}/auth/login`, request.url);
+      loginUrl.searchParams.set('callbackUrl', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  // Apply next-intl middleware for all other routes
+  return intlMiddleware(request);
+}
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(bn)/:path*']
-}; 
+  matcher: ['/', '/(bn)/:path*'],
+};

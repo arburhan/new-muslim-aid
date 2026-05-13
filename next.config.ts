@@ -22,12 +22,17 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Image optimization for Sanity
+  // Image optimization for external sources
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
         pathname: '/**',
       },
     ],

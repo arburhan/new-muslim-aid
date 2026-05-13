@@ -12,6 +12,11 @@ export async function getGoogleSheetsClient() {
     throw new Error('Missing Google Sheets environment variables');
   }
 
+  // Validate private key format to prevent OpenSSL errors
+  if (!GOOGLE_PRIVATE_KEY.includes('-----BEGIN') || GOOGLE_PRIVATE_KEY.includes('YOUR_PRIVATE_KEY_HERE')) {
+    throw new Error('Google Sheets private key is not configured. Please set GOOGLE_PRIVATE_KEY in .env.local with a valid service account key.');
+  }
+
   const serviceAccountAuth = new JWT({
     email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
     key: GOOGLE_PRIVATE_KEY,
@@ -20,7 +25,7 @@ export async function getGoogleSheetsClient() {
 
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID, serviceAccountAuth);
   await doc.loadInfo();
-  
+
   return doc;
 }
 
@@ -44,7 +49,7 @@ export interface VolunteerFormData {
 export async function submitVolunteerForm(data: VolunteerFormData) {
   try {
     const doc = await getGoogleSheetsClient();
-    
+
     // Get or create the volunteers sheet
     let sheet = doc.sheetsByTitle['Volunteers'];
     if (!sheet) {
@@ -114,7 +119,7 @@ export interface NewMuslimFormData {
 export async function submitNewMuslimForm(data: NewMuslimFormData) {
   try {
     const doc = await getGoogleSheetsClient();
-    
+
     // Get or create the new Muslims sheet
     let sheet = doc.sheetsByTitle['New Muslims'];
     if (!sheet) {
@@ -176,7 +181,7 @@ export interface ContactFormData {
 export async function submitContactForm(data: ContactFormData) {
   try {
     const doc = await getGoogleSheetsClient();
-    
+
     // Get or create the contacts sheet
     let sheet = doc.sheetsByTitle['Contacts'];
     if (!sheet) {
@@ -210,4 +215,60 @@ export async function submitContactForm(data: ContactFormData) {
     console.error('Error submitting contact form:', error);
     return { success: false, message: 'Failed to submit contact form' };
   }
-} 
+}
+
+// Donation record submission (from Paystation verified payments)
+export interface DonationRecordData {
+  name: string;
+  email: string;
+  phone: string;
+  amount: string;
+  transactionId: string;
+  paymentMethod: string;
+  status: string;
+  type: string; // 'donation' or 'zakat'
+  submittedAt: string;
+}
+
+export async function submitDonationRecord(data: DonationRecordData) {
+  try {
+    const doc = await getGoogleSheetsClient();
+
+    // Get or create the donations sheet
+    let sheet = doc.sheetsByTitle['Donations'];
+    if (!sheet) {
+      sheet = await doc.addSheet({
+        title: 'Donations',
+        headerValues: [
+          'Name',
+          'Email',
+          'Phone',
+          'Amount (BDT)',
+          'Transaction ID',
+          'Payment Method',
+          'Status',
+          'Type',
+          'Date'
+        ]
+      });
+    }
+
+    // Add the row
+    await sheet.addRow([
+      data.name,
+      data.email,
+      data.phone,
+      data.amount,
+      data.transactionId,
+      data.paymentMethod,
+      data.status,
+      data.type,
+      data.submittedAt
+    ]);
+
+    return { success: true, message: 'Donation record submitted successfully' };
+  } catch (error) {
+    console.error('Error submitting donation record:', error);
+    return { success: false, message: 'Failed to submit donation record' };
+  }
+}

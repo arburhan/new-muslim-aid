@@ -6,61 +6,63 @@
 import nodemailer from 'nodemailer';
 
 function getTransporter() {
-    return nodemailer.createTransport({
-        host: process.env.SMTP_HOST || 'smtp.gmail.com',
-        port: parseInt(process.env.SMTP_PORT || '587'),
-        secure: false, // true for 465, false for 587
-        auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASSWORD,
-        },
-    });
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false, // true for 465, false for 587
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
+    },
+  });
 }
 
 interface InvoiceParams {
-    donorName: string;
-    donorEmail: string;
-    amount: string;
-    transactionId: string;
-    transactionDate: string;
-    paymentMethod: string;
+  donorName: string;
+  donorEmail: string;
+  amount: string;
+  transactionId: string;
+  transactionDate: string;
+  paymentMethod: string;
 }
 
 /**
  * Send a donation invoice email to the donor
  */
 export async function sendDonationInvoice(params: InvoiceParams): Promise<boolean> {
-    try {
-        const transporter = getTransporter();
+  try {
+    const transporter = getTransporter();
 
-        const fromName = process.env.SMTP_FROM_NAME || 'NewMuslim Aid Foundation';
-        const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+    const fromName = process.env.SMTP_FROM_NAME || 'NewMuslim Aid Foundation';
+    const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
 
-        const htmlContent = generateInvoiceHTML(params);
+    const htmlContent = generateInvoiceHTML(params);
 
-        await transporter.sendMail({
-            from: `"${fromName}" <${fromEmail}>`,
-            to: params.donorEmail,
-            subject: `দানের রসিদ - NewMuslim Aid Foundation | Transaction: ${params.transactionId}`,
-            html: htmlContent,
-        });
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: params.donorEmail,
+      subject: `দানের রসিদ - NewMuslim Aid Foundation | Transaction: ${params.transactionId}`,
+      html: htmlContent,
+    });
 
-        console.log(`✅ Invoice email sent to ${params.donorEmail} for transaction ${params.transactionId}`);
-        return true;
-    } catch (error) {
-        console.error('❌ Failed to send invoice email:', error);
-        return false;
-    }
+    return true;
+  } catch (error) {
+    console.error('❌ Failed to send invoice email:', error);
+    return false;
+  }
 }
 
 function generateInvoiceHTML(params: InvoiceParams): string {
-    const formattedAmount = new Intl.NumberFormat('bn-BD', {
-        style: 'currency',
-        currency: 'BDT',
-        minimumFractionDigits: 0,
-    }).format(parseFloat(params.amount));
+  const formattedAmount = new Intl.NumberFormat('bn-BD', {
+    style: 'currency',
+    currency: 'BDT',
+    minimumFractionDigits: 0,
+  }).format(parseFloat(params.amount));
 
-    return `
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://newmuslimaid.com').replace(/\/$/, '');
+  const logoUrl = `${siteUrl}/logo.png`;
+
+  return `
 <!DOCTYPE html>
 <html lang="bn" dir="ltr">
 <head>
@@ -76,11 +78,12 @@ function generateInvoiceHTML(params: InvoiceParams): string {
           <!-- Header -->
           <tr>
             <td style="background:linear-gradient(135deg,#1B4332 0%,#2D5A40 50%,#006A4E 100%);padding:40px 40px 30px;text-align:center;">
+              <img src="${logoUrl}" alt="NewMuslim Aid Foundation" width="80" height="80" style="display:block;margin:0 auto 16px;border-radius:12px;width:80px;height:80px;object-fit:contain;" />
               <h1 style="color:#FFD700;font-size:28px;margin:0 0 8px;font-weight:800;">
-                ☪ NewMuslim Aid Foundation
+                NewMuslim Aid Foundation
               </h1>
               <p style="color:rgba(255,255,255,0.9);font-size:14px;margin:0;">
-                বাংলাদেশে নওমুসলিমদের সহায়তা
+                বাংলাদেশে নওমুসলিমদের পরিচর্যা কেন্দ্র
               </p>
             </td>
           </tr>
@@ -159,7 +162,7 @@ function generateInvoiceHTML(params: InvoiceParams): string {
             <td style="padding:0 40px 24px;">
               <div style="background:linear-gradient(135deg,#fefce8,#fffbeb);border:1px solid #fde68a;border-radius:12px;padding:20px 24px;text-align:center;">
                 <p style="color:#92400e;font-size:18px;font-weight:600;margin:0 0 8px;font-style:italic;">
-                  "যে ব্যক্তি আল্লাহর রাস্তায় দান করে, তার প্রতিদান সাতশত গুণ বৃদ্ধি পায়।"
+                  "যারা নিজেদের ধন সম্পদ আল্লাহ্‌র পথে ব্যয় করে তাদের উপমা একটি বীজের মত, যা সাতটি শীষ উৎপাদন করে, প্রত্যেক শীষে একশ শস্যদানা। আর আল্লাহ্‌ যাকে ইচ্ছে বহুগুণে বৃদ্ধি করে দেন। আর আল্লাহ্‌ সর্বব্যাপী- প্রাচুর্যময়, সর্বজ্ঞ ।"
                 </p>
                 <p style="color:#a16207;font-size:13px;margin:0;">— সূরা আল-বাকারা, ২:২৬১</p>
               </div>
@@ -186,4 +189,149 @@ function generateInvoiceHTML(params: InvoiceParams): string {
 </body>
 </html>
   `.trim();
+}
+
+interface PasswordResetParams {
+  name: string;
+  email: string;
+  resetUrl: string;
+}
+
+/**
+ * Send a password reset email
+ */
+export async function sendPasswordResetEmail(params: PasswordResetParams): Promise<boolean> {
+  try {
+    const transporter = getTransporter();
+    const fromName = process.env.SMTP_FROM_NAME || 'NewMuslim Aid Foundation';
+    const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://newmuslimaid.com').replace(/\/$/, '');
+    const logoUrl = `${siteUrl}/logo.png`;
+
+    const html = `
+<!DOCTYPE html>
+<html lang="bn">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background-color:#f3f4f6;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#f3f4f6;padding:40px 20px;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+        <tr>
+          <td style="background:linear-gradient(135deg,#1B4332 0%,#2D5A40 50%,#006A4E 100%);padding:40px;text-align:center;">
+            <img src="${logoUrl}" alt="NewMuslim Aid Foundation" width="70" height="70" style="display:block;margin:0 auto 16px;border-radius:10px;" />
+            <h1 style="color:#FFD700;font-size:24px;margin:0 0 8px;font-weight:800;">NewMuslim Aid Foundation</h1>
+            <p style="color:rgba(255,255,255,0.9);font-size:14px;margin:0;">পাসওয়ার্ড রিসেট</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:40px;">
+            <p style="color:#374151;font-size:16px;line-height:1.6;">প্রিয় <strong>${params.name}</strong>,</p>
+            <p style="color:#6b7280;font-size:15px;line-height:1.6;">আপনি পাসওয়ার্ড রিসেটের জন্য অনুরোধ করেছেন। নিচের বাটনে ক্লিক করে নতুন পাসওয়ার্ড সেট করুন:</p>
+            <div style="text-align:center;margin:32px 0;">
+              <a href="${params.resetUrl}" style="display:inline-block;background:linear-gradient(135deg,#1B4332,#006A4E);color:#ffffff;text-decoration:none;padding:16px 32px;border-radius:12px;font-size:16px;font-weight:700;">পাসওয়ার্ড রিসেট করুন</a>
+            </div>
+            <p style="color:#9ca3af;font-size:13px;line-height:1.6;">এই লিঙ্কটি ১ ঘণ্টার জন্য কার্যকর। আপনি যদি পাসওয়ার্ড রিসেটের অনুরোধ না করে থাকেন, এই ইমেইলটি উপেক্ষা করুন।</p>
+            <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;">
+            <p style="color:#d1d5db;font-size:12px;text-align:center;">© ${new Date().getFullYear()} NewMuslim Aid Foundation. All rights reserved.</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`.trim();
+
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: params.email,
+      subject: 'পাসওয়ার্ড রিসেট — NewMuslim Aid Foundation',
+      html,
+    });
+
+    return true;
+  } catch (error) {
+    console.error('❌ Failed to send password reset email:', error);
+    return false;
+  }
+}
+
+interface NudgeEmailParams {
+  recipientName: string;
+  recipientEmail: string;
+  donorName: string;
+  donorAmount: number;
+  unsubscribeToken: string;
+}
+
+/**
+ * Send a monthly nudge email to referral link creator
+ */
+export async function sendNudgeEmail(params: NudgeEmailParams): Promise<boolean> {
+  try {
+    const transporter = getTransporter();
+    const fromName = process.env.SMTP_FROM_NAME || 'NewMuslim Aid Foundation';
+    const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://newmuslimaid.com').replace(/\/$/, '');
+    const logoUrl = `${siteUrl}/logo.png`;
+    const unsubscribeUrl = `${siteUrl}/api/unsubscribe?token=${params.unsubscribeToken}`;
+    const donationUrl = `${siteUrl}/bn/donation`;
+
+    const formattedAmount = new Intl.NumberFormat('bn-BD', {
+      style: 'currency',
+      currency: 'BDT',
+      minimumFractionDigits: 0,
+    }).format(params.donorAmount);
+
+    const html = `
+<!DOCTYPE html>
+<html lang="bn">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background-color:#f3f4f6;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#f3f4f6;padding:40px 20px;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+        <tr>
+          <td style="background:linear-gradient(135deg,#1B4332 0%,#2D5A40 50%,#006A4E 100%);padding:40px;text-align:center;">
+            <img src="${logoUrl}" alt="NewMuslim Aid Foundation" width="70" height="70" style="display:block;margin:0 auto 16px;border-radius:10px;" />
+            <h1 style="color:#FFD700;font-size:24px;margin:0 0 8px;font-weight:800;">NewMuslim Aid Foundation</h1>
+            <p style="color:rgba(255,255,255,0.9);font-size:14px;margin:0;">সাদকায়ে জারিয়ার নতুন খবর 🌱</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:40px;">
+            <p style="color:#374151;font-size:16px;line-height:1.6;">প্রিয় <strong>${params.recipientName}</strong>,</p>
+            <p style="color:#6b7280;font-size:15px;line-height:1.6;">আপনার শেয়ার করা সাদকায়ে জারিয়া লিঙ্কের মাধ্যমে <strong>${params.donorName}</strong> এই মাসে <strong style="color:#059669;">${formattedAmount}</strong> দান করেছেন।</p>
+            <div style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:1px solid #a7f3d0;border-radius:12px;padding:20px;text-align:center;margin:24px 0;">
+              <p style="color:#065f46;font-size:15px;font-weight:600;margin:0 0 4px;">আপনিও কি এই মাসে অংশগ্রহণ করবেন?</p>
+              <p style="color:#6b7280;font-size:13px;margin:0;">প্রতিটি দান নওমুসলিমদের জীবন পরিবর্তন করতে সাহায্য করে।</p>
+            </div>
+            <div style="text-align:center;margin:24px 0;">
+              <a href="${donationUrl}" style="display:inline-block;background:linear-gradient(135deg,#1B4332,#006A4E);color:#ffffff;text-decoration:none;padding:16px 32px;border-radius:12px;font-size:16px;font-weight:700;">এখনই দান করুন</a>
+            </div>
+            <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;">
+            <p style="color:#9ca3af;font-size:12px;text-align:center;line-height:1.8;">
+              আপনি এই ইমেইল পাচ্ছেন কারণ আপনি NewMuslim Aid Foundation-এ সাদকায়ে জারিয়া লিঙ্ক তৈরি করেছেন।<br>
+              ইমেইল বন্ধ করতে চাইলে: <a href="${unsubscribeUrl}" style="color:#059669;text-decoration:underline;">এখানে ক্লিক করুন (আনসাবস্ক্রাইব)</a>
+            </p>
+            <p style="color:#d1d5db;font-size:12px;text-align:center;margin-top:8px;">© ${new Date().getFullYear()} NewMuslim Aid Foundation. All rights reserved.</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`.trim();
+
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: params.recipientEmail,
+      subject: `${params.donorName} দান করেছেন — আপনিও অংশগ্রহণ করুন | NewMuslim Aid Foundation`,
+      html,
+    });
+
+    return true;
+  } catch (error) {
+    console.error('❌ Failed to send nudge email:', error);
+    return false;
+  }
 }

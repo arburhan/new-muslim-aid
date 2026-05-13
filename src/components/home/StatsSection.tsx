@@ -139,7 +139,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-white via-slate-50/50 to-emerald-50/20 relative overflow-hidden">
+    <section ref={sectionRef} className="py-24 bg-linear-to-br from-white via-slate-50/50 to-emerald-50/20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-islamic-primary/5 rounded-full blur-3xl"></div>
@@ -182,17 +182,17 @@ export default function StatsSection() {
             return (
               <div
                 key={stat.label}
-                className={`group relative bg-gradient-to-br ${stat.bgGradient} rounded-3xl p-8 border border-white/50 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden`}
+                className={`group relative bg-linear-to-br ${stat.bgGradient} rounded-3xl p-8 border border-white/50 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
-                  <div className={`w-full h-full bg-gradient-to-br ${stat.gradient} rounded-full transform translate-x-12 -translate-y-12`}></div>
+                  <div className={`w-full h-full bg-linear-to-br ${stat.gradient} rounded-full transform translate-x-12 -translate-y-12`}></div>
                 </div>
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                  <div className={`w-16 h-16 bg-linear-to-br ${stat.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
 
@@ -211,7 +211,7 @@ export default function StatsSection() {
                 </div>
 
                 {/* Hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/10 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-white/0 via-white/10 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
             );
           })}

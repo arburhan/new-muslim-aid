@@ -4,11 +4,7 @@ import { useLocale } from "next-intl";
 import { PlayCircleIcon, BookOpenIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
-import aj from '../../../../public/images/sheikhs/abdullah jahangir.png';
-import abj from '../../../../public/images/sheikhs/abu bokor jakaria.png';
-import ah from '../../../../public/images/sheikhs/ahmadullah.png';
-import me from '../../../../public/images/sheikhs/manzur e elaihi.png';
-import ubf from '../../../../public/images/sheikhs/uthman.png';
+import { blobImages } from '@/lib/blob-images';
 import Link from "next/link";
 
 export default function GuidelinesPage() {
@@ -46,27 +42,27 @@ export default function GuidelinesPage() {
     const scholars = [
         {
             name: "খন্দকার আবদুল্লাহ জাহাঙ্গীর রাহিঃ",
-            image: aj,
+            image: blobImages.sheikhs.abdullahJahangir,
             link: "https://www.youtube.com/@SunnahTrust"
         },
         {
-            name: "আবু বকর মুহাম্মাদ জাকারিয়া",
-            image: abj,
+            name: "আবু বকর মুহাম্মাদ জাকারিয়া",
+            image: blobImages.sheikhs.abuBokorJakaria,
             link: "https://www.youtube.com/@AbuBakarMdZakaria"
         },
         {
             name: "শাইখ আহমাদুল্লাহ",
-            image: ah,
+            image: blobImages.sheikhs.ahmadullah,
             link: "https://www.youtube.com/@sheikhahmadullahofficial"
         },
         {
             name: "মানজুর ই ইলাইহি",
-            image: me,
+            image: blobImages.sheikhs.manzurEElaihi,
             link: "https://www.youtube.com/@DrMohammadMonzurEElahi"
         },
         {
             name: "উসমান বিন ফারুক",
-            image: ubf,
+            image: blobImages.sheikhs.uthman,
             link: "https://www.youtube.com/@OneMessageFoundation",
         },
     ];
@@ -161,9 +157,9 @@ export default function GuidelinesPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* Hero Section */}
-            <div className="bg-gradient-to-r from-green-600 to-blue-700 text-white py-12">
+            <div className="bg-linear-to-r from-green-600 to-blue-700 text-white py-12">
                 <div className="container-custom">
                     <div className="text-center">
                         <h1 className="text-5xl lg:text-6xl font-black mb-6">
@@ -255,9 +251,9 @@ export default function GuidelinesPage() {
                                 className="group flex flex-col items-center text-center transform hover:-translate-y-2 transition-all duration-300"
                             >
                                 <div className="relative mb-3 md:mb-4">
-                                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-green-400 to-blue-500 p-1 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-linear-to-br from-green-400 to-blue-500 p-1 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
                                         <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                                            <Image src={scholar.image} alt={scholar.name} className="object-cover" />
+                                            <Image src={scholar.image} alt={scholar.name} width={128} height={128} className="object-cover w-full h-full" />
                                         </div>
                                     </div>
                                 </div>
@@ -314,7 +310,7 @@ export default function GuidelinesPage() {
                 </div>
 
                 {/* Call to Action */}
-                <div className="text-center bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-3xl p-12 shadow-2xl">
+                <div className="text-center bg-linear-to-r from-green-600 to-blue-600 text-white rounded-3xl p-12 shadow-2xl">
                     <h3 className="text-3xl font-bold mb-4">
                         {locale === "bn" ? "আরও সাহায্য প্রয়োজন?" : "Need More Help?"}
                     </h3>

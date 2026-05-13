@@ -2,15 +2,41 @@ import { Suspense } from "react";
 import BankDetails from "@/components/home/BankDetails";
 import ZakatFundCardsWrapper from "./ZakatFundCardsWrapper";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "যাকাত ফান্ড | NewMuslim Aid Foundation",
     description:
         "নওমুসলিমদের জীবন পরিবর্তনে আপনার যাকাত গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে যাকাত দিন।",
+    openGraph: {
+        title: "যাকাত দিন — নওমুসলিমদের পাশে দাঁড়ান | NewMuslim Aid Foundation",
+        description:
+            "আপনার যাকাতে বদলে যাবে একটি জীবন। নওমুসলিমদের ইসলামিক শিক্ষা, পুনর্বাসন ও জীবন গঠনে নিরাপদে অনলাইনে যাকাত দিন।",
+        type: "website",
+        locale: "bn_BD",
+        url: "/bn/zakat-fund",
+        siteName: "NewMuslim Aid Foundation",
+        images: [
+            {
+                url: "/logo.png",
+                width: 512,
+                height: 512,
+                alt: "NewMuslim Aid Foundation Logo",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary",
+        title: "যাকাত দিন — নওমুসলিমদের পাশে দাঁড়ান",
+        description:
+            "আপনার যাকাতে বদলে যাবে একটি জীবন। নিরাপদে অনলাইনে যাকাত দিন।",
+        images: ["/logo.png"],
+    },
 };
 
 export default function ZakatFundPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-emerald-50">
             {/* Hero Section */}
             <section className="relative overflow-hidden py-16 md:py-20">
                 {/* Background decorations */}
@@ -25,7 +51,7 @@ export default function ZakatFundPage() {
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
                             আপনার{" "}
-                            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                            <span className="bg-linear-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                                 যাকাতে
                             </span>{" "}
                             বদলে যাবে

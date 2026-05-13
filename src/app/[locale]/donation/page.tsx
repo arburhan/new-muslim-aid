@@ -2,38 +2,63 @@ import { Suspense } from "react";
 import BankDetails from "@/components/home/BankDetails";
 import DonationCardsWrapper from "./DonationCardsWrapper";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "দান করুন | NewMuslim Aid Foundation",
     description:
         "নওমুসলিমদের জীবন পরিবর্তনে আপনার দান গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে দান করুন।",
+    openGraph: {
+        title: "দান করুন — নওমুসলিমদের পাশে দাঁড়ান | NewMuslim Aid Foundation",
+        description:
+            "আপনার দানে বদলে যাবে একটি জীবন। নওমুসলিমদের ইসলামিক শিক্ষা, পুনর্বাসন ও জীবন গঠনে নিরাপদে অনলাইনে দান করুন।",
+        type: "website",
+        locale: "bn_BD",
+        url: "/bn/donation",
+        siteName: "NewMuslim Aid Foundation",
+        images: [
+            {
+                url: "/logo.png",
+                width: 512,
+                height: 512,
+                alt: "NewMuslim Aid Foundation Logo",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary",
+        title: "দান করুন — নওমুসলিমদের পাশে দাঁড়ান",
+        description:
+            "আপনার দানে বদলে যাবে একটি জীবন। নিরাপদে অনলাইনে দান করুন।",
+        images: ["/logo.png"],
+    },
 };
 
 export default function DonationPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-emerald-50">
             {/* Hero Section */}
-            <section className="relative overflow-hidden py-16 md:py-20">
+            <section className="relative overflow-hidden pt-8">
                 {/* Background decorations */}
                 <div className="absolute top-0 left-0 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute top-1/2 right-0 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/2"></div>
 
                 <div className="container-custom relative z-10">
                     <div className="text-center max-w-3xl mx-auto mb-4">
-                        <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+                        <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-5 py-2 rounded-full text-sm font-semibold mb-5">
                             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                             নিরাপদ অনলাইন দান
                         </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                        <h1 className="text-2xl md:text-2xl lg:text-3xl font-black text-gray-900 leading-tight mb-2">
                             আপনার{" "}
-                            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                            <span className="bg-linear-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                                 দানে
                             </span>{" "}
-                            বদলে যাবে
-                            <br className="hidden md:block" /> একটি জীবন
+                            বদলে যাবে একটি জীবন
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                        <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
                             নওমুসলিমদের ইসলামিক শিক্ষা, পুনর্বাসন ও জীবন গঠনে আপনার সাদাকাহ
-                            গুরুত্বপূর্ণ ভূমিকা রাখবে। নিরাপদে অনলাইনে দান করুন।
+                            গুরুত্বপূর্ণ ভূমিকা রাখবে ।
                         </p>
                     </div>
                 </div>

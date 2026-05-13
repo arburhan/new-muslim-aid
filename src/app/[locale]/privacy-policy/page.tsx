@@ -51,9 +51,9 @@ export default function PrivacyPolicyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50">
             {/* Hero */}
-            <div className="relative bg-gradient-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-24 overflow-hidden">
+            <div className="relative bg-linear-to-r from-green-700 via-green-600 to-teal-600 text-white py-16 md:py-24 overflow-hidden">
                 <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3" />
                 <div className="container-custom relative z-10">
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                         {sections.map((s) => (
                             <div key={s.num}>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                    <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">{s.num}</span>
+                                    <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">{s.num}</span>
                                     {s.title}
                                 </h2>
                                 <p className="text-gray-700 text-lg leading-relaxed">{s.content}</p>
@@ -89,9 +89,9 @@ export default function PrivacyPolicyPage() {
                         ))}
 
                         {/* Contact */}
-                        <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-green-200">
+                        <div className="bg-linear-to-r from-green-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-green-200">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১০</span>
+                                <span className="w-8 h-8 bg-linear-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">১০</span>
                                 যোগাযোগ
                             </h2>
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">

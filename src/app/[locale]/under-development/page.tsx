@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
-import { 
-  WrenchScrewdriverIcon, 
-  SparklesIcon, 
+import {
+  WrenchScrewdriverIcon,
+  SparklesIcon,
   HeartIcon,
   ArrowLeftIcon,
   ClockIcon,
@@ -41,7 +41,7 @@ export default function UnderDevelopmentPage() {
   // ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-green-200/20 rounded-full blur-3xl"></div>
@@ -52,7 +52,7 @@ export default function UnderDevelopmentPage() {
       <div className="container-custom relative z-10">
         {/* Header */}
         <div className="pt-20 pb-16 text-center">
-          <Link 
+          <Link
             href={`/${locale}`}
             className="inline-flex items-center text-green-700 hover:text-green-800 font-semibold mb-8 transition-colors duration-200"
           >
@@ -62,7 +62,7 @@ export default function UnderDevelopmentPage() {
 
           {/* Main Icon */}
           <div className="relative mb-8">
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+            <div className="w-32 h-32 mx-auto bg-linear-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
               <WrenchScrewdriverIcon className="w-16 h-16 text-white" />
             </div>
             <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
@@ -74,10 +74,10 @@ export default function UnderDevelopmentPage() {
           <h1 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
             {locale === 'bn' ? 'শীঘ্রই আসছে!' : 'Coming Soon!'}
           </h1>
-          
+
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            {locale === 'bn' 
-              ? 'আমরা এই পেজটি আপনাদের জন্য প্রস্তুত করছি। খুব শীঘ্রই এটি পাবলিশ করা হবে ইন শা আল্লাহ।' 
+            {locale === 'bn'
+              ? 'আমরা এই পেজটি আপনাদের জন্য প্রস্তুত করছি। খুব শীঘ্রই এটি পাবলিশ করা হবে ইন শা আল্লাহ।'
               : 'We are preparing this section for you. It will be available very soon in sha Allah.'
             }
           </p>
@@ -96,16 +96,16 @@ export default function UnderDevelopmentPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             {locale === 'bn' ? 'আপনি কী আশা করতে পারেন' : 'What You Can Expect'}
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div 
+                <div
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-linear-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
@@ -118,23 +118,23 @@ export default function UnderDevelopmentPage() {
 
         {/* Call to Action */}
         <div className="text-center pb-20">
-          <div className="bg-gradient-to-r from-green-500 to-blue-600 rounded-3xl p-12 text-white max-w-4xl mx-auto">
+          <div className="bg-linear-to-r from-green-500 to-blue-600 rounded-3xl p-12 text-white max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
               <RocketLaunchIcon className="w-12 h-12 mr-4" />
               <StarIcon className="w-8 h-8" />
             </div>
-            
+
             <h3 className="text-3xl font-bold mb-4">
               {locale === 'bn' ? 'আমাদের সাথে থাকুন!' : 'Stay Tuned!'}
             </h3>
-            
+
             <p className="text-xl mb-8 opacity-90">
-              {locale === 'bn' 
-                ? 'আমরা আপনার জন্য বিশেষ কিছু প্রস্তুত করছি। আপডেট পেতে আমাদের সাথে যোগাযোগ করুন।' 
+              {locale === 'bn'
+                ? 'আমরা আপনার জন্য বিশেষ কিছু প্রস্তুত করছি। আপডেট পেতে আমাদের সাথে যোগাযোগ করুন।'
                 : 'We are preparing something special for you. Contact us to get updates.'
               }
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={`/${locale}/contact`}
@@ -143,7 +143,7 @@ export default function UnderDevelopmentPage() {
                 <PhoneIcon className="w-5 h-5 mr-2" />
                 {locale === 'bn' ? 'যোগাযোগ করুন' : 'Contact Us'}
               </Link>
-              
+
               <Link
                 href={`/${locale}`}
                 className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-green-700 transition-all duration-200"
